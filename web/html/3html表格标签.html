@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+1.表格标签 
+    1)table是表格的整体，可以包含多个tr；tr是表格每行，可以包含多个td；td是表格单元格，可以放任何内容
+    2)显示表格加属性，border（边框宽度），width（宽）height（高）
+    3)表格标题和表头单元格标签，caption（表格大标题，写在table的内部）；th（表头单元格，常用于表格第一行，默认文字加粗并居中，写在tr内部（用于替换td））
+    4）表格结构标签（用于包tr），thead（表哥头部）；tbode（主体）；tfoot（底部）
+    举例用td：
+    <table border="1" width="500" height="300">
+        <tr>
+            <td>姓名</td>
+            <td>成绩</td>
+            <td>评语</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>100</td>
+            <td>哈哈</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>200</td>
+            <td>嘿嘿</td>
+        </tr>
+        </table>
+        举例用th、td：
+    <table border="1">
+        <caption>学生成绩</caption>
+        <tr>
+            <th>姓名</th>
+            <th>成绩</th>
+            <th>评语</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>200</td>
+            <td>哈哈</td>
+        </tr>
+    </table>
+   举例thead（表哥头部）；tbode（主体）；tfoot（底部）： 
+<table border="1">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>成绩</th>
+                <th>评语</th>
+            </tr> 
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>200</td>
+                <td>哈哈</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>结果</td>
+                <td>100</td>
+                <td>嘿嘿</td>
+            </tr>
+        </tfoot>
+    </table>
+    5）合并单元格；只有用一个标签才可以合并，不可以跨结构合并（不能跨thead（表哥头部）；tbode（主体）；tfoot（底部））
+    上下合并保留上，左右表留左，rowspan（合并几个就写几，垂直合并又叫跨行合并）；colspan（合并几个就写几，水平合并又叫跨列合并）-->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th colspan="2">成绩</th>
+            </tr> 
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td  rowspan="2">200</td>
+                <td>哈哈</td>
+            </tr>
+            <tr>
+                <td>2</td>
+  <!-- 要删掉合并取消的内容 -->
+                <td>yaoyao</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>结果</td>
+                <td>100</td>
+                <td>嘿嘿</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

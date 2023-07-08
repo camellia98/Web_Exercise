@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网页的标题</title>
+</head>
+<body>
+    <!-- 1.标题标签只有<h1>（h1最大） -<h6>（文字从1-6逐渐减小）标题标签都只会占一行
+    <h1>1级</h1>
+    <h2>2级</h2>
+    <h3>3级</h3>
+    <h4>4级</h4>
+    <h5>5级</h5>
+    <h6>6级</h6> 
+2.段落标签 独占一行，两端有分割
+<p>传智教育·黑马程序员前端研究院全新录制的前端入门教程，相关资料源码笔记等关注微信公众号：黑马程序员，回复关键词：领取资源02</p>
+<p>传智教育·黑马程序员前端研究院全新录制的前端入门教程，相关资料源码笔记等关注微信公众号：黑马程序员，回复关键词：领取资源02</p>
+3.换行标签 <br>（line break）换行
+<p>传智教育·黑马程序员前端研究院全新录制的前端入门教程，  <br> 相关资料源码笔记等关注微信公众号：黑马程序员，回复关键词：领取资源02</p>
+4.水平线标签 <hr>(horize)水平分割线
+<h1>1级</h1>
+<hr>
+<p>传智教育·黑马程序员前端研究院全新录制的前端入门教程，  <br> 相关资料源码笔记等关注微信公众号：黑马程序员，回复关键词：领取资源02</p>
+5.<b>加粗</b>、<u>下划线</u>、<i>倾斜</i>、<s>删除线</s>、
+<strong>加粗</strong>、<ins>下划线</ins>、<em>倾斜</em>、<del>删除线</del>重点用这个
+6.图片标签
+标签可以多个属性
+<img src（属性名）="（属性值）1（./+就是当前位置"整体叫属性）或（文件名）都叫相对路径的同级别 2（下级当前文件）alt="替换文本"图片加载失败则显示文本 title="提示文本"鼠标放在照片不动的时候会显示文本 width=""宽度和height=""高度如果只设置了宽或高中的一个，另一个会同比例缩放，图片不会变形，基础单位是像素>
+<img src="./1570854919.jpeg" alt="红红火火恍恍惚惚" title="看我" width="200">
+<img src="./123/1570854919.jpeg" alt="">
+上级目录，在html之外就用../,多几个文件用几个. 
+<img src="../123/1570854919.jpeg" alt="">
+7.音频文件
+<audio src="（./+就是当前位置)"></audio> controls(显示播放控件) autopiay（自动播放有些不支持） loop（循环播放）
+<audio src="./music/小可儿 - 念诗之王.mp3" controls autoplay loop></audio>
+8.视频标签
+<video src="（./+就是当前位置)"></video> controls(显示播放控件) autopiay（muted静音才可以自动播放） loop（循环播放）
+<video src="./下载.mp4" controls autoplay muted loop></video>
+9.超链接 <a href="（跳转的网址)或者./+路径">写文字</a>
+当开发网站初期，不知道跳转地址是什么，href的值写#（空连接）
+target（目标网页的打开方式）-self（默认值，在当前窗口跳转，覆盖原网页）；-blank（在新窗口中跳转（保留原网页））
+<a href="https://www.baidu.com/">跳转百度</a>
+<br>
+<a href="./html练习.html" target="_blank" >去练习</a>
+<br>
+<a href="#">空连接不知道调到那里去</a>
+index(首页)-->
+</body>
+</html>
+<!-- 快捷键： 按一次ctrl+/(注释)   按两次就取消了
+转为网页的快捷键alt+b
+ctrl+d会选中一样的共同更改
+alt+z自动换行
+shift+alt+箭头下就可以复制
+tab（往后缩进）shift+tab（往前缩进） -->
+<!-- <>/加上英文单词合起来的叫标签 ；有开始和结束的叫双标签，不需要成对出现叫单标签
+（、）
+标签只有两种关系1.嵌套关系2.并列关系 -->
+
