@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+       <!-- 
+css(层叠样式，如果给同一个标签设置相同的属性，此时后面的覆盖前面的)
+  <style>
+        p{
+            color: red;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+  <p>hhhhh</p>
+</body>
+</html> 
+1.css字体样式
+1）字体大小：font-size（数字+px）;浏览器默认字号16px;、
+<style>
+        p{
+            /* 一定要加单位，否则无效 */
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+     <p>段落文字</p>
+</body>
+</html>
+2)字体粗细：font-weight取值(推荐用数字，不需要加单位)（normal（正常）或者400（正常））;（bold(加粗)或700（加粗））
+<style>
+        div{
+            font-weight: 700;
+        }
+        h1{
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <div>粗细</div>
+    <h1>一级标题</h1>
+</body>
+</html>
+3)字体样式：font-style(是否倾斜)取值（normal（正常）;italic(倾斜)）
+ <style>
+        div{
+            font-style: italic;
+        }
+        em{
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <div>div的文字</div>
+    <em>哈哈哈哈</em>
+</body>
+</html>
+4）字体类型：font-family取值（具体字体（微软雅黑、黑体、宋体等））Windows（默认字体为人雅黑）
+（无衬字体（sans-serif）网页常用、衬线字体（serif）、等宽字体（monospace））
+    <style>
+    div{
+        /* 如果没有微软雅黑，就按黑体显示文字 */
+        /* 如果没有黑体，就按任意一种无衬字体显示*/
+        font-family: 微软雅黑,黑体,sans-serif;
+    }
+    </style> 
+    </head>
+<body>
+    <div>div的文字</div>
+    <em>哈哈哈哈</em>
+</body>
+</html>
+5)字体类型：font属性连写(取值font(复合属性))(font:style weight size famliy;)
+注意：把单独的属性写在复合属性的下面；把单独的属性写在连写的里面
+
+    <style>
+    p{
+        /* font: style weight size famliy; */
+         /* 一个属性还会书写多个值的写法--复合属性 */
+        font: italic 700 66px 宋体;
+        /* 把单独的属性写在复合属性的下面 */
+        /* font复合属性不能省略字号和字体 */
+        font-style: normal;
+   
+    }
+    </style>
+</head>
+<body>
+  <p>红红火火恍恍惚惚</p>
+</body>
+</html>
+2.文本样式-->
+</head>
+<body>
+  <p>红红火火恍恍惚惚</p>
+</body>
+</html>
+
+
+<!-- 这种傻瓜式 -->
