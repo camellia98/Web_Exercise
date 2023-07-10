@@ -108,6 +108,7 @@ css(层叠样式，如果给同一个标签设置相同的属性，此时后面�
 </body>
 </html>
 2）内容水平对齐方式（text-align）取值（left左对齐；center居中对齐（能让文本、span标签、a标签、input标签、img标签居中;让这写元素居中，需要给父级添加属性）；right右对齐）
+
 <style>
     h1{
         /* text-align: center; */
@@ -152,7 +153,7 @@ css(层叠样式，如果给同一个标签设置相同的属性，此时后面�
 3.行高（line-heigh）:控制两行之间的距离用。取值（数字+px；倍数（当前font-size的倍数）
 让单行文本垂直居中可以line-height：在父元素设置；可以取消上下间距
 font:style weight size/line-height family;(也可以放在复合属性)）
--->
+
 <style>
     p{
         /* line-height: 50px; */
@@ -167,4 +168,19 @@ font:style weight size/line-height family;(也可以放在复合属性)）
 <body>
     <p>这段画面使用AMD Ryzen 9 7950X处理器和NVIDIA GeForce RTX 4090显卡运行后捕捉，另外还使用了超人口MOD对游戏进行优化。 DLSS 3在《赛博朋克2077》的表现似乎非常理想，乍一看甚至分辨不出使用了哪种模式，甚至难以与原生4K区别。</p>
 </body>
-</html
+</html>
+4.颜色（带有#就是将数字转为十六进制；rgba（红绿蓝透明））
+5.拓展：标签水平居中（margin:0 auto:）-->
+<style>
+    div{
+        width: 300px;
+        height: 300px;
+        background-color: aqua;
+        margin: 0 auto;
+    }
+</style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
