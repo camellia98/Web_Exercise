@@ -1,0 +1,21 @@
+div{
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+}
+.center{
+    text-align: center;
+}
+.color1{
+    color: #808080;
+}    
+.color2{
+    color: #87ceeb;
+    font-weight: 700;
+}
+a{
+    text-decoration: none;
+}
+.indent{
+    text-indent: 2em;
+}

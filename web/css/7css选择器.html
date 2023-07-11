@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+       <!-- 选择器（之前标签、id、类选择器、通配符）
+1.后代选择器（选择器1+空格+选择器2{css}（父级 后代{}））
+ <style>
+        div p{
+            color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p>只是</p>
+</div>
+</body>
+</html>
+2.子代选择器（选择器1>选择器2{css}）
+    <style>
+      div>a{
+        color: blueviolet;
+        text-decoration: none;
+      }
+    </style>
+</head>
+<body>
+<div>
+    富集
+    <a href="#">这是一个</a>
+    <p>
+        <a href="#">里面</a>
+    </p>
+</div>
+</body>
+</html>
+3.并集选择器 选择器,选择器{css}-->
+    <style>
+        /* 这样写干净整齐 */
+        div,
+        p,
+        span{
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <p>p</p>
+    <div>div</div>
+    <span>span</span>
+    <h1>h1</h1>
+    <h2>h2</h2>
+</body>
+</html>
