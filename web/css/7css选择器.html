@@ -36,8 +36,8 @@
 </div>
 </body>
 </html>
-3.并集选择器 选择器,选择器{css}-->
-    <style>
+3.并集选择器 选择器,选择器{css}
+<style>
         /* 这样写干净整齐 */
         div,
         p,
@@ -52,5 +52,87 @@
     <span>span</span>
     <h1>h1</h1>
     <h2>h2</h2>
+</body>
+</html>
+4.交集选择器(标签+类命名{css})
+ <style>
+       p.box{
+        color: blueviolet;
+       }
+    </style>
+</head>
+<body>
+    <p class="box">这是一个p；box</p>
+    <p>ppppp</p>
+    <div class="box">这是div；box</div>
+   
+</body>
+</html>
+5.hover伪类选择器（选择器:hover{css}）(鼠标悬停在元素上显示的状态)
+<style>
+     a:hover{
+        color: rgb(231, 191, 29);
+        background-color: rebeccapurple;
+        /* 任何标签都可以添加伪类，任何一个标签都可以鼠标悬停 */
+     }
+     div:hover{
+        color: brown;
+     }
+    </style>
+</head>
+<body>
+    <a href="#">你好</a>
+    <div>哈哈哈哈</div>
+</body>
+</html>
+6.Emmet语法-->
+    <style>
+        div{
+            font-size: large;
+            /* 提示css属性，规律是单词的首字母，如（fs）font-size */
+            /* 将宽度高度背景色一起写（w300(宽度数值)+h300（高度数值)+bgc） */
+            width: 300px;
+            height: 300px;
+            background-color: #e42e2e;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- 生成div，带类名 -->
+    <!-- 简写直接写.box就会显示<div class="box"></div> -->
+    <div class="box"></div>
+    <!-- 简写直接写p.box就会显示 <p class="box"></p>-->
+    <p class="box"></p>
+    <!-- 同上方法写 -->
+    <div id="box"></div>
+    <p id="box"></p>
+    <!-- 可以类命名和id连写（p.red#one会显示  <p class="red" id="one"></p>-->
+    <p class="red" id="one"></p>
+    <!-- div与同级一起写可以加+如（div+p） -->
+    <div></div>
+    <p></p>
+    <!-- 父子级用>（div>p） -->
+    <div>
+        <p></p>
+    </div>
+    <!-- 如果是多个父子级用*(ul>li*3) -->
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <!-- ul有3个li其中里面有文字，{文字} （ul>li{文字}*3）-->
+    <ul>
+        <li>hhhhhh</li>
+        <li>hhhhhh</li>
+        <li>hhhhhh</li>
+    </ul>
+    <!-- ul有3个li，li的文字是1,2,3（ul>li{$}*3）-->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
 </body>
 </html>
