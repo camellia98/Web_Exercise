@@ -6,8 +6,7 @@
     <title>Document</title>
       <!-- 
 1.背景颜色（background-color）简写（bgc）背景默认是透明的
-     -->
-     <style>
+      <style>
         div{
             /* background-color: brown; */
             /* a透明色0-1 */
@@ -19,6 +18,47 @@
 </head>
 <body>
      <div>div</div>
-     <!-- div是表示一整行 -->
+    div是表示一整行 
 </body>
 </html>
+2.背景图片（background-image）(bgi)属性值（background-image:url(图片路径）; 
+3.背景平铺（background-repeat）(bgr)取值（repeat（默认水平和垂直方向都平铺）；no-repeat(不平铺)；repeat-x(水平平铺)；repeat-y（垂直平铺））
+4.背景位置（background-position:水平 垂直）(bgp)取值()（水平（left,center,right）;垂直(top,center,bottom);数字+px（坐标））
+ <style>
+     div{
+          background-color: brown;
+          background-image: url(../1570854919.jpeg);
+          background-size: 50%;
+          /* background-size用于调整背景元素图片大小(100%是) */
+          width: 600px;
+          height: 600px;
+          background-repeat:no-repeat;
+          /* background-position: right 0;图片在最右边 */
+          /* background-position: right bottom;图片在右下角 */
+          /* background-position: center center; */
+          background-position: 50px 60px;
+          /* 正数：向右或向下移动，负数：向左或向上移动 */
+          /* 背景色和背景图只显示盒子的里面 */
+     }
+    </style>
+</head>
+<body>
+     <div>div</div>
+</body>
+</html>
+5.背景相关属性连写（background）bg，书写顺序（background：color image regeat position）-->
+    <style>
+     div{
+        width: 600px;
+        height: 600px;
+        background: pink url(../1570854919.jpeg) no-repeat center bottom;
+        background-size: 50%;
+     }
+    </style>
+</head>
+<body>
+     <div>div</div>
+</body>
+</html>
+<!-- 6.img标签和背景图片的区别 
+重要的像产品图片用img，装饰的用背景图-->
