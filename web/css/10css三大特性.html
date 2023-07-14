@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- 
+1.继承性 常见属性（文字控制属性都可以继承）
+如果本身有自带的字号或颜色，则不会继承
+<style>
+            div{
+                color: brown;
+                font-size: 30px;
+            }
+        </style>
+</head>
+<body>
+   <div>
+    <a href="#">连接</a>
+    <h1>标题</h1>
+   </div>
+</body>
+</html>
+2.层叠性(后面的层叠前面的)
+<style>
+            div{
+                color: brown;
+                color: #1814ee;
+            }
+            .yyy{
+                color: aqua;
+            }
+        </style>
+</head>
+<body>
+   <div class="yyy">hhhh</div>
+</body>
+</html>
+3.优先级-->
+        <style>
+            div{
+                color: brown;
+                color: #1814ee;
+            }
+            .yyy{
+                color: aqua;
+            }
+        </style>
+</head>
+<body>
+   <div class="yyy">hhhh</div>
+</body>
+</html>

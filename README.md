@@ -49,7 +49,7 @@ int main(void)
 
 还可以展示图片
 
-![Alt text](1570854919.jpeg)
+![Alt text](./web/1570854919.jpeg)
     
 
 
