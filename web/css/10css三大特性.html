@@ -36,18 +36,58 @@
    <div class="yyy">hhhh</div>
 </body>
 </html>
-3.优先级-->
-        <style>
-            div{
-                color: brown;
-                color: #1814ee;
+3.优先级(当一个标签使用了多个选择器，样式冲突的时候，谁先生效)
+1）优先级的公式：继承<通配符选择器<标签<类<id<行内<!important（!important不能给继承的添加，因为自己有样式）
+ <style>
+            /* id第3 */
+            #box1{
+                color: blue;
             }
-            .yyy{
-                color: aqua;
+            /* 类命名第4 */
+            .box{
+                color: blueviolet;
+            }
+            /* 标签第5,但增加!important会第1显示 （）*/
+            div{
+                color: burlywood !important;
+            }
+            /* 继承第6 */
+         body{
+            color: brown;
             }
         </style>
 </head>
 <body>
-   <div class="yyy">hhhh</div>
+    注释：style="color行内式第2
+    <div class="box" id="box1" style="color: aqua;">测试优先级</div>
+</body>
+</html>
+2）权重叠加计算(如果第一级比较出来，则后面的都不需要比较，没有对比出来，则对比第二个，以此类推)
+有!important不需要比较
+只要是继承关系都是最低的-->
+        <style>
+            /* 行内，id，类,标签 */
+            /* 0,1,0,1 */
+            div #one{
+                color: brown;
+            }
+            /* 0,0,2,0 */
+            .father .son{
+                color: blueviolet;
+            }
+            /* 0,0,1,1 */
+            .father p{
+                color: blue;
+            }
+            /* 0,0,0,2 */
+            div p{
+                color: blanchedalmond;
+            }
+        </style>
+</head>
+<body>
+   <div class="father">
+   <p class="son" id="one">我是一个标签</p>
+</div>
 </body>
 </html>
