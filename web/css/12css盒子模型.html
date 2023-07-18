@@ -4,25 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+   <!-- 
+1.盒子就是一个标签；盒子模型：css规定每个盒子分别由{内容区域（content）、内边距区域（padding）、边框区域（border）、外边距区域（margin）
+     <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: rebeccapurple;
+            /* 边框线 */
+            border: 1px solid black;
+            /* 内边距（边框线与内容的距离 ） */
+            padding: 50px;
+            /*外边距（边框线以外的距离） */
+            margin: 50px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>内容电脑</div>
+    <div>内容电脑</div>
+</body>
+</html>
+1）盒子的内容宽度和高度的范围,属性（width,height）}
     <style>
-        .c1 .c2 div{
-            color: blue;
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: rebeccapurple;
         }
-        div #box3{
-            color: rgb(180, 180, 199);
+        
+    </style>
+</head>
+<body>
+    <div>内容电脑</div>
+</body>
+</html>
+2)边框线border（取值border: 数字+px（边框线的粗细数值） solid（实线）（线条的种类 ） 颜色）复合属性（一个属性有多个值，并用空格隔开）快捷键bd；solid（实线）；dashed(虚线)；dotted(点线)
+(1边框线单方向设置（border-方位名词： 数字+px（边框线的粗细数值） solid（实线）（线条的种类 ） 颜色;
+style>
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: rebeccapurple;
+            /* border: 5px solid #000; */
+              /* 但方向边框 */
+           border-left:5px solid #000;
+         
         }
-        #box1 div{
-            color: brown;
+        
+    </style>
+</head>
+<body>
+    <div>内容电脑</div>
+</body>
+</html>
+(2盒子实际大小初级计算公式(boeder会增大盒子的尺寸)
+举例1<style>
+        div{
+            width: 400px;
+            height: 400px;
+            background-color:green;
+            border: 10px solid #000;   
+        }
+        
+    </style>
+</head>
+<body>
+    <div>内容电脑</div>
+</body>
+</html>
+举例练习
+ div的宽是body的百分百 -->
+ <!-- 布局从外到内，先宽高背景色，在调节内容的位置，在调节文字细节
+<style>
+        .box{
+            height: 40px;
+            border-top:3px solid #ff8500;
+            border-bottom: 1px solid #ededf0; 
+        }
+        /* 嵌套关系 */
+        .box a{
+            width: 80px;
+            height: 40px;
+            display: inline-block;
+            text-align: center;
+            line-height: 40px;
+            font-size: 12px;
+            color: #4c4c4c;
+           text-decoration: none;
+            
+        }  
+        .box a:hover{
+            background-color: #ededf0;
+            color: #ff8500;
         }
     </style>
 </head>
 <body>
-    <div id="box1" class="c1">
-        <div id="box2" class="c2">
-            <div id="box3" class="c3">
-                哈哈哈哈
-            </div>
-        </div>
+   
+    <div class="box">
+        <a href="#">新浪导航</a>
+        <a href="#">新浪导航</a>
+        <a href="#">新浪导航</a>
+        <a href="#">新浪导航</a>
     </div>
+</body>
+</html>
+3）内边距区域（padding）:当添加一个值，则4个方向的内边距都会改变；可以当复合属性使用，设置单个方向的值，最多取4个值，顺序（上右下左。瞬时间旋转，如果数不够看对面，就是对称面）
+<style>
+    div{
+        width: 300px;
+        height: 300px;
+        background-color: aqua;
+        /*  */
+        padding: 50px;
+        padding: 10px 20px 30px 40px;
+        /* 上 右 下左 */
+        padding: 10px 20px 30px;
+        /* 上 右左 下 */
+        padding: 10px 20px;
+        /* 上下 左右 */
+    }
+</style>-->
+<style>
+    div{
+        width: 240px;
+        height: 240px;
+        background-color: red;
+        border: 10px solid black;
+        padding: 20px;
+    }
+</style>
+</head>
+<body>
+    <div>文字</div>
 </body>
 </html>
