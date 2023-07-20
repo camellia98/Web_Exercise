@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+1.结构伪类选择器
+E（element元素）你想找的任何元素，不是写E
+1）E:fiest-child()父元素第一个，并且是E元素
+2)E:last-child()父元素最后一个，并且是E元素
+3)E:nat-child()父元素第n个元素，并且是E元素
+4)E:nat-last-child（n）()父元素倒数第n个元素，并且是E元素
+<style>
+        /* 找到第一个 */
+        li:first-child{
+            background-color: #df2525;
+            list-style: none;
+        }
+        /* 最后一个 */
+        li:last-child{
+            background-color: #89e12a;
+        }
+        /* 找自定义第几个 */
+        li:nth-child(6){
+            background-color: #10c778;
+        }
+        /* 从倒数找自定义第几个 */
+        li:nth-last-child(4){
+            background-color: antiquewhite;
+        }
+     </style>
+</head>
+<body>
+   <ul>
+    <li>这是第1个li</li>
+    <li>这是第2个li</li>
+    <li>这是第3个li</li>
+    <li>这是第4个li</li>
+    <li>这是第5个li</li>
+    <li>这是第6个li</li>
+    <li>这是第7个li</li>
+    <li>这是第8个li</li>
+   </ul>
+</body>
+</html>
+5)n元素可以添加公式但n从零开始（偶数（2n、even）奇数（2n+1、2n-1、odd）、找到前5个（-n+5）、找到从第5个往后（n+5））
+     -->
+     <style>
+        /* 找到第一个 */
+        li:first-child{
+            background-color: #df2525;
+            list-style: none;
+        }
+        /* 最后一个 */
+        li:last-child{
+            background-color: #89e12a;
+        }
+        /* 找自定义第几个 */
+        li:nth-child(6){
+            background-color: #10c778;
+        }
+        /* 从倒数找自定义第几个 */
+        li:nth-last-child(4){
+            background-color: antiquewhite;
+        }
+     </style>
+</head>
+<body>
+   <ul>
+    <li>这是第1个li</li>
+    <li>这是第2个li</li>
+    <li>这是第3个li</li>
+    <li>这是第4个li</li>
+    <li>这是第5个li</li>
+    <li>这是第6个li</li>
+    <li>这是第7个li</li>
+    <li>这是第8个li</li>
+   </ul>
+</body>
+</html>

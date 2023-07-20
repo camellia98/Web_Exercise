@@ -158,7 +158,9 @@ style>
     <div>文字</div>
 </body>
 </html>
-5）外边距（margin）
+5）外边距（margin）（
+1.外边距合并问题，在垂直的方向，出现折叠现象，就是垂直有两个盒子，在两个盒子的交接处设置外边距，就会产生折叠现象，不要这样设置就不会出现问题，或者给其中一个设置总共的外边距值
+2.）
 <style>
     div{
         width: 300px;
@@ -183,7 +185,7 @@ style>
     </ul>
 </body>
 </html>
-7)版心居中（版心就是网页的有效内容，出现在正中间）-->
+7)版心居中（版心就是网页的有效内容，出现在正中间）
 <style>
     div{
         width: 1000px;
@@ -195,5 +197,41 @@ style>
 </head>
 <body>
     <div>版心</div>
+</body>
+</html>
+8）塌陷问题(嵌套关系会出现塌陷)
+解决方法（1.给父级加border-top(但必须给儿子级加外边距才会显示)或者padding-top
+        2.给父级加overflow:hidden3.转成行内块4.设置浮动）
+<style>
+    .father{
+        width: 300px;
+        height: 300px;
+        background-color: #ee0c0c;
+        /* padding: 50px; */
+        /* border: 1px solid black; */
+        overflow: hidden;
+    }
+    .son{
+        width: 100px;
+        height: 100px;
+        background-color: #74d71e;
+        margin: 50px;
+        /* display: inline-block;
+        行内块 */
+    }
+</style>
+</head>
+<body>
+    <div class="father">
+        <div class="son">son</div>
+    </div>
+</body>
+</html>
+9）行内元素的内外边距问题-->
+</head>
+<body>
+    <div class="father">
+        <div class="son">son</div>
+    </div>
 </body>
 </html>
