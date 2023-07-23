@@ -3,4 +3,14 @@
 p{
     color: red;
 }
-
+.claerfix::before,
+.claerfix::after{
+    content:'' ;
+    /* 转成表格的模式 */
+    display: table;
+    
+}
+/* 真正清除浮动的标签 */
+.claerfix::after{
+    clear: both;
+}
