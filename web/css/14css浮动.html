@@ -186,9 +186,85 @@ E（element元素）你想找的任何元素，不是写E
 </body>
 </html>
 5.清除浮动
-（如果子元素浮动，此时子元素不能撑开标准流的块级元素）-->
+1）给父级加高度
+2）额外标签法（在父级内容的最后添加一个块标签，给块级元素设置clear:both，缺点：会额外加标签，是html结构变复杂）
+（如果子元素浮动，此时子元素不能撑开标准流的块级元素）
+<style>
+    /* 父子级标签，子级浮动，如果父级没有高度，后面标准流的盒子会受影响，会显示在上面的位置 */
+    .top{
+        margin: 0 auto;
+        width: 1000px;
+        /* height: 300px; */
+        background-color: #f26767;
+    }
+    .left{
+        float: left;
+        width: 200px;
+        height: 300px;
+        background-color: aqua;
+    }
+    .right{
+        float: right;
+        width: 790px;
+        height: 300px;background-color: chocolate;
+    }
+    .claerfix{
+        /* 清除两侧，也可以清除左或右 */
+        clear: both;
+    }
+    .bottom{
+        height: 100px;
+        background-color: blanchedalmond;
+    }
+</style>
 </head>
 <body>
-    
+    <div class="top">
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="claerfix"></div>
+        清除浮动的命名clearfix
+    </div>
+    <div class="bottom"></div>
+</body>
+</html>
+3）单伪元素（假标签）清除法（::after（content:'';dispaly:block;clear:both;））-->
+<style>
+    /* 父子级标签，子级浮动，如果父级没有高度，后面标准流的盒子会受影响，会显示在上面的位置 */
+    .top{
+        margin: 0 auto;
+        width: 1000px;
+        /* height: 300px; */
+        background-color: #f26767;
+    }
+    .claerfix::after{
+        content:'' ;
+        /* 伪元素添加是行内的 */
+        display: block;
+        clear: both;
+    }
+    .left{
+        float: left;
+        width: 200px;
+        height: 300px;
+        background-color: aqua;
+    }
+    .right{
+        float: right;
+        width: 790px;
+        height: 300px;background-color: chocolate;
+    }
+    .bottom{
+        height: 100px;
+        background-color: blanchedalmond;
+    }
+</style>
+</head>
+<body>
+    <div class="top claerfix">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <div class="bottom"></div>
 </body>
 </html>
