@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+    .claerfix::before,.claerfix::after{
+        content:'' ;
+        display: table;
+        
+    }
+    .claerfix::after{
+        clear: both;
+    }
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background: color #f3f5f7;
+}
+/* 版心 */
+.wrapper{
+    width: 1200px;
+    margin: 0 auto;
+}
+/* 头部 */
+.header{
+    height: 42px;
+    /* background-color: #9f1818; */
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /*  margin: 30px auto;上下30，左右不变*/
+}
+h1{
+    float: left;
+}
+/* 导航 */
+.nav{
+    /* 要和头部在一行，添加浮动 */
+    float: left;
+    margin-left: 70px;
+    height: 42px;
+}
+.nav li{
+    float: left;
+    margin-right: 26px;
+}
+.nav li a{
+    padding: 0 9px;
+    display: inline-block;
+    height:42px;
+    line-height: 42px;
+    font-size: 18px;
+    color: #050505;
+    
+}
+.nav li a:hover{
+    border-bottom: 2px solid #00a4ff;
+}
+/* 搜素 */
+.search{
+    float: left;
+    margin-left: 59px;
+    width: 420px;
+    height: 40px;
+    border: 1px solid #00a4ff;
+}
+.search input{
+    float: left;
+    padding-left: 20px;
+    width: 350px;
+    height: 40px;
+    border: 0;
+    
+}
+/* 控制 placeholder使用::placeholder就可以控制*/
+.search input::placeholder{
+    font-size: 14px;
+    columns: #bfbfbf;
+}
+.search button{
+    float: left;
+    width: 50px;
+    height: 40px;
+    background-image: url(../images/btn.png);
+    border: 0;
+}
+/* 用户 */
+.user{
+    float: right;
+    margin-right: 40px;
+    height: 42px;
+    line-height: 42px;
+}
+.user img{
+    /* 调节图片垂直的对齐方式，middle居中 */
+    vertical-align: middle;
+}
