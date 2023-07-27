@@ -208,3 +208,35 @@ h1{
     font-size: 14px;
     color: #00a4ff;
 }
+/* 精品课程 */
+.box{
+    margin-top: 35px;
+}
+.box .title{
+    height: 40px;
+    /* background-color: #9bceea; */
+
+}
+.box .title h2{
+    float: left;
+    font-size: 20px;
+    color: #494949;
+    font-weight: 400;
+}
+.box .title a{
+    margin-right: 30px;
+    float: right;
+    font-size: 12px;
+    color: #a5a5a5;
+}
+.box .content li{
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    width: 212px;
+    height: 270px;
+    background-color: blueviolet;
+} 
+.box .content li:nth-child(5n){
+    margin-right: 0;
+}
