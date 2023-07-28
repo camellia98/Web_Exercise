@@ -235,8 +235,73 @@ h1{
     margin-bottom: 15px;
     width: 212px;
     height: 270px;
-    background-color: blueviolet;
+    background-color:#fff;
 } 
+.box .content li:hover{
+    box-shadow: 0px 2px 3px 0px 
+		rgba(118, 118, 118, 0.2);
+}
 .box .content li:nth-child(5n){
     margin-right: 0;
+}
+.box .content li a img{
+    width: 212px;
+}
+.box .content li  h3{
+    padding: 20px;
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+}
+.box .content li  p{
+    padding: 0 20px;
+    font-size: 12px;
+    color: #999;
+}
+.box .content li  span{
+    color: #ff7c2d
+}
+/* 精品课程1 */
+
+/* 版权 */
+/* 由于上面没有整体的宽度，所以要清除浮动 */
+.footer{
+    padding-top: 30px;
+    margin-top: 40px;
+    height: 417px;
+    background-color: #fff;
+}
+.footer .left{
+    float: left;
+}
+.footer .left p{
+    padding: 20px 0 10px;
+    font-size: 12px;
+    color: #666;
+}
+.footer .left a{
+    display: block;
+    border: 1px solid #00a4ff;
+    width: 120px;
+    height: 36px;
+    font-size: 16px;
+    color: #00a4ff;
+    text-align: center;
+    line-height: 34px;
+}
+.footer .right{
+    float: right;
+}
+.footer .right dl{
+    float: left;
+    margin-left: 120px;
+}
+.footer .right dl dt {
+    font-size: 16px;
+    color: #333;
+    padding-bottom: 14px;
+}
+.footer .right  dl a{
+    font-size: 12px;
+    color: #333;
 }
