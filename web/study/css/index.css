@@ -203,6 +203,7 @@ h1{
     font-weight: 700px;
     color: #050505;
 }
+
 .goods .xingqu{
     float: right;
     font-size: 14px;
@@ -236,6 +237,7 @@ h1{
     width: 212px;
     height: 270px;
     background-color:#fff;
+    position: relative;
 } 
 .box .content li:hover{
     box-shadow: 0px 2px 3px 0px 
@@ -244,8 +246,14 @@ h1{
 .box .content li:nth-child(5n){
     margin-right: 0;
 }
-.box .content li a img{
+.box .content li a .pricter{
     width: 212px;
+}
+/* 父绝子相：定位 */
+.box .content li .top{
+    position: absolute;
+    right: -4px;
+    top: 4px;
 }
 .box .content li  h3{
     padding: 20px;

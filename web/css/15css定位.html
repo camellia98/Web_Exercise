@@ -8,8 +8,9 @@
 <!-- 1.定位的步骤（属性名position）常用的属性值（静态定位static、相对定位relative、绝对定位absolute、固定定位fixed）（设置偏移值（水平left right） （垂直top bottom））
 1）静态定位 /* 静态定位，默认值，标准流 */
 
-2）相对定位relative（position:relative;）相对于自己之前的位置进行移动
-占有原来位置；仍然具备标签的显示模式特点；改变位置是根据自己原有的位置来改变-->
+2）相对定位relative（position:relative;）相对于自己之前的位置进行移动，必须设置偏移值（水平left right） 优先显示水平left（垂直top bottom）优先显示垂直top
+占有原来位置；仍然具备标签的显示模式特点；改变位置是根据自己原有的位置来改变
+
 <style>
     .box{
         /*  */
@@ -37,3 +38,83 @@
     <p>发发发改变发发发改变发发发改变发发发改变发发发改变发发发改变发发发改变发发发改变</p>
 </body>
 </html>
+3）绝对定位absolute
+(脱标，不在占位：改变标签的显示特点；具备行内块的特点)
+先找已定位的父级，如果有这样的父级就以这个父级为参照物进行定位
+如果有父级没有定位，就以浏览器为参照物进行定位
+    /* .box{
+        没有父级或父级没有定位
+        脱标，不在占位：改变标签的显示特点；具备行内块的特点
+        position: absolute;
+        top: 0;
+        left: 0;
+        有父级
+
+        width: 200px;
+        height: 200px;
+        background-color: #df3636;*/
+    }
+    绝对定位查找父级的方式：就近原则；如果卓层差找不到父级，就以浏览器窗口进行参照进行定位
+<style>
+    .father{
+        position: relative;
+        width: 400px;
+        height: 400px;
+        background-color: aqua;
+    }
+    .son{
+        /* 父绝子相：父级相对定位，自己绝对定位 */
+        /* position: absolute; 这个会改变位置所以需要相对定位*/
+        position: relative;
+        /* 相对定位主要不改变父级在布局中的位置 */
+        right: 100px;
+        width: 300px;
+        height: 300px;
+        background-color: aquamarine;
+    }
+    .sun{
+        /* 绝对定位在儿子级加位置，但需要给父级添加 */
+        position: absolute;
+        right: 20px;
+        bottom: 30px;
+        width: 200px;
+        height: 200px;
+        background-color: rgb(171, 53, 230);
+    }
+</style>
+</head>
+<body>
+   <div class="father">
+    <div class="son">
+        <div class="sun"></div>
+    </div>
+   </div>
+</body>
+</html>
+4)绝对定位的居中效果，子绝父相的居中
+绝对定位不能使用margin: 0 auto;进行居中
+<style>
+    .box{
+        position: absolute;
+        /* 绝对定位不能使用margin: 0 auto;进行居中
+        margin: 0 auto; */
+        left: 50%;
+        /*  left: 50%;整个盒子已到浏览器中间偏右的位置 */
+        /* 往右没有效果，因为没有设置整体外盒子的大小，右边没有值 */
+        /* margin-left: -200px; */
+        /* 把盒子向左移，自己宽度的一半 */
+        top: 50%;
+        /* margin-top: -200px; */
+        /* 位移，自己宽度高度的一半 */
+        transform: translate(-50%,-50%);
+        width: 403px;
+        height: 400px;
+        background-color: aqua;
+    }
+</style>
+</head>
+<body>
+   <div class="box"></div>
+</body>
+</html>
+5)固定定位fixed-->

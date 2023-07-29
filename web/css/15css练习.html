@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+练习1<style>
+        /* 子绝父相 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nav {
+            height: 40px;
+            border-bottom: 1px solid black;
+            margin-top: 20px;
+            border-top: 1px solid black;
+        }
+        .nav ul{
+            list-style: none;
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .nav ul li{
+            float: left;
+            width: 20%;
+            height: 40px;
+            line-height: 40px;
+            border-right: 1px solid black;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .nav  li a{
+            display: inline-block;
+            height: 40px;
+            text-decoration: none;
+            color: black;
+        }
+        .nav ul .last{
+            border-right: none;
+        }
+        .nav ul li .app{
+            position: relative;
+        }
+        .nav ul li .code{
+            position: absolute;
+            left: 50%;
+            top: 40px;
+            transform: translate(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="#">我要投资</a></li>
+            <li><a href="#">平台介绍</a></li>
+            <li><a href="#">新手专区</a></li>
+            <li><a class="app" href="#">手机微金所
+                 <img class="code" src="../study/images/btn.png" alt="">
+                </a></li>
+            <li class="last"><a  href="#">个人中心</a></li>
+        </ul>
+    </div>
+</body>
+</html> -->
+<style>
+.box{
+    position: relative;
+    width: 900px;
+    height: 500px;
+    margin: 0 auto;
+    }
+    .box img{
+        width: 900px;
+        height: 500px;
+        
+    }
+    .box .color{
+        /* 因为定位是行内块，必须填写宽度高度 */
+        /* 如果子级和父级的宽度一样，可以写        width: 100%; */
+        position: absolute;
+        right: -4px;
+        bottom: 0;
+        width: 900px;
+        height: 150px;
+        background-color: rgba(0, 0, 0,0.3);
+
+    }
+</style>
+</head>
+<body>
+    <div class="box">
+        <img src="../1570854919.jpeg" alt="">
+        <div class="color"></div>
+    </div>
+</body>
+</html>
