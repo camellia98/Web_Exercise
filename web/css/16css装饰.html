@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 认识基线（baseline在浏览器文字类型元素排版中用于对齐） -->
+<!-- 1垂直对齐方式：(属性名：vertical-align）属性值（baseline(默认，基线对齐)；top(顶部对齐)；middle(中部对齐)；bottom(底部对齐)
+    行内和行内块文字类型居中都是用middle(中部对齐)）
+    如果设置垂直对齐方式，给看起来比较大的设置
+ 
+ 举例1<style>
+    /* 浏览器遇到行内和行内块当做文字处理，默认文字是按基线对象 */
+    input{
+        height: 50px;
+        box-sizing: border-box;
+        vertical-align: middle;
+    }
+ </style>
+</head>
+<body>
+    <input type="text"><input type="button" value="搜索">
+</body>
+</html>
+举例2<style>
+    div{
+        width: 300px;
+        height: 300px;
+        background-color: beige;
+    }
+    input{
+        vertical-align: top;
+    }
+</style>
+</head>
+<body>
+    <div><input type="text"></div>
+</body>
+</html>
+<style>
+    div{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        text-align: center;
+        /* 要想图片进行水平居中，必须加行高和 vertical-align: middle;才可以生效 */
+        line-height: 100px;
+    }
+    img{
+        vertical-align: middle;
+    }
+</style>
+</head>
+<body>
+    <div><img src="../study/images/btn.png" alt=""></div>
+</body>
+</html>
+2光标类型属性名（cursor）取值（default默认箭头；pointer小手效果，提示可以点击；text工字型，可以选择文字；move十字光标，可以移动）
+<style>
+    div{
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+        /* 光标小手效果 */
+        /* cursor: pointer; */
+        /* 选择文字 */
+        /* cursor: text; */
+        /* 十字光标，可以移动 */
+        cursor: move;
+    }
+</style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+3)边框圆角属性名（border-radius取值数字+px、百分比）
+正圆必须正方形取值50%
+胶囊按钮就是盒子必须长方形，取值是盒子高度的一半
+<style>
+    div{
+        width: 300px;
+        height: 200px;
+        background-color: cornflowerblue;
+        margin: 50px auto;
+        /* 百分之50是正圆 ，正圆盒子必须是正方形*/
+        /* border-radius: 50%; */
+        /*  */
+        border-radius: 150px;
+        /* 4值：左上 右上 右下 左下 */
+        /* border-radius: 10px 20px 30px 50px; */
+        /* 3值，没设值得角对应斜对角 */
+        /* border-radius: 10px 30px 50px; */
+        /* 2值 ，没设值得角对应斜对角*/
+        /* border-radius: 10px 80px;  */
+    }
+</style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+4）overflow溢出部分显示效果（属性名overflow；取值visble默认值，溢出部分可见；hidden溢出部分隐藏；scroll无乱是否溢出，都显示滚动条；auto根据是否溢出，自动显示或隐藏滚动条）
+
+<style>
+    div{
+        width: 300px;
+        height: 300px;
+        background-color: darkcyan;
+        /* 溢出部分隐藏 */
+        /* overflow: hidden; */
+        /* 无乱是否溢出，都显示滚动条 */
+        /* overflow: scroll; */
+        /* 根据是否溢出，自动显示或隐藏滚动条 */
+        overflow: auto;
+
+    }
+</style>
+</head>
+<body>
+    <div>是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机是导航是覅富含司机</div>
+</body>
+</html>
+5)元素本身的隐藏属性名（visibility:hidden;display:none;s）
+<style>
+    div{
+        width: 200px;
+        height: 200px;
+    }
+    .one{
+        /*占位隐藏 */
+        /* visibility: hidden; */
+        /* 不占位隐藏 */
+        display: none;
+        background-color: aqua;
+    }
+    .two{
+        background-color: antiquewhite;
+    }
+</style>
+</head>
+<body>
+    <div class="one">1</div>
+    <div class="two">2</div>
+</body>
+</html>
+举例<style>
+    /* 子绝父相 */
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .nav {
+        height: 40px;
+        border-bottom: 1px solid black;
+        margin-top: 20px;
+        border-top: 1px solid black;
+    }
+    .nav ul{
+        list-style: none;
+        width: 1200px;
+        margin: 0 auto;
+    }
+    .nav ul li{
+        float: left;
+        width: 20%;
+        height: 40px;
+        line-height: 40px;
+        border-right: 1px solid black;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    .nav  li a{
+        display: inline-block;
+        height: 40px;
+        text-decoration: none;
+        color: black;
+    }
+    .nav ul .last{
+        border-right: none;
+    }
+    .nav ul li .app{
+        position: relative;
+    }
+    .nav ul li .code{
+        position: absolute;
+        left: 50%;
+        top: 40px;
+        transform: translate(-50%);
+        display: none;
+        /* 隐藏属性必须是父子关系 */
+    }
+    .nav ul li .app:hover img{
+        display: block;
+    }
+</style>
+</head>
+<body>
+<div class="nav">
+    <ul>
+        <li><a href="#">我要投资</a></li>
+        <li><a href="#">平台介绍</a></li>
+        <li><a href="#">新手专区</a></li>
+        <li><a class="app" href="#">手机微金所
+             <img class="code" src="../study/images/btn.png" alt="">
+            </a></li>
+        <li class="last"><a  href="#">个人中心</a></li>
+    </ul>
+</div>
+</body>
+</html>
+6）拓展（元素整体透明度属性名（opacity）属性值0-1之间的数字，1完全不透明，0完全透明）-->
+<style>
+    .code{
+        opacity: 0.3;
+    }
+</style>
+</head>
+<body>
+<div class="nav">
+   <img class="code" src="../study/images/btn.png" alt="">
+</div>
+</body>
+</html>
