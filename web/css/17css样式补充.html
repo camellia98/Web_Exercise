@@ -5,12 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- 1精灵图(必须是行内标签)
-    精灵图设置盒子的背景图，使用设置位置background-position: x y; -->
+    精灵图设置盒子的背景图，使用设置位置background-position: x（水平） y（垂直）; （可以给负数 ）
+2背景图片的大小属性名（background-size 宽度 高度；）取值（数字+px；百分比；contain（包含，将背景图片等比例缩放，直到不会超出盒子的最大；cover覆盖，将背景图片等比例缩放，直到刚好填满整个盒子没有空白）
+拓展背景图复合属性：background：color image repeat position/size）注意background-size会有覆盖问题，要么单独写，要么复合写，先写复合在写background-size
     <style>
+        .box{
+            /* 工作中，图和盒子比例相同的 */
+            width: 300px;
+            height: 400px;
+            background-color: bisque;
+            background-image: url(../study/images/btn.png);
+            /* 不平铺 */
+            background-repeat: no-repeat;
+            /* 数字改变大小 */
+            /* background-size: 100px; */
+            /* 百分比大小 */
+            /* background-size: 50%; */
+            /* 如果尺寸的宽和高与盒子相同，另一方向则停止缩放，就会有留白 contain（包含，将背景图片等比例缩放，直到不会超出盒子的最大 */
+            /* background-size: contain; */
+            /* 保证宽或高的尺寸与盒子完全相同，导致图片显示不完全，cover覆盖，将背景图片等比例缩放，直到刚好填满整个盒子没有空白 */
+            background-size: cover;
 
+        }
     </style>
 </head>
 <body>
-    
+    <div class="box"></div>
 </body>
 </html>
+3盒子阴影属性名（box-shadow）取值（h-shadow必须，水平偏移量，允许负值；v-shadow必须，垂直偏移量，允许负值；blur可选，模糊度；spread可选，阴影扩大；color，可选，阴影颜色；inset可选，将阴影改为内部阴影）
+<style>
+    /* 文字阴影text-shadow */
+    .box{
+        width: 200px;
+        height: 200px;
+        background-color: blueviolet;
+        /* inset可以不添加，不添加就是外 */
+        box-shadow: 5px 10px 20px 10px green inset;
+    }
+</style>
+
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
+4过渡（通常配合hover使用）
+属性名transition(过渡属性：all所有能过渡的属性都能过渡；书写具体属性名，只有具体属性名能过渡；)（过渡时长：数字+s（秒））
+过渡需要给元素本身添加才会实现
+默认状态鼠标移入和移出都有效果，但hover只有鼠标移入有效果-->
+<style>
+    .box{
+        width: 200px;
+        height: 200px;
+        background-color: antiquewhite;
+        /* 过渡需要给本身添加 */
+        /* 单独设置 */
+        /* transition: width 1s,background-color 2s ; */
+        /* 变化属性多就用all全部，看hover给谁就实现谁 */
+        transition: all 1s;
+    }
+    .box:hover{
+        /* transition: width 1s; */
+        width: 600px;
+       background-color: blue;
+    }
+</style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
