@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 数据类型（简单数据类型；复杂数据类型）：占用不同的空间
+js的变量是只有程序在运行过程中，根据等号右边的值来确定的 
+js是动态语言 变量的类型是可以变化的
+1.简单数据类型（Number（数字型包含整型和浮点型，默认值0）；Boolean（布尔值类型（true、false），默认值false）；String（字符串类型，默认值（""））;Undefinde（声明了变量，但没有给值）；Null（声明了变量的值为空））-->
+<!--1）数字型 Number（数字型包含整型和浮点型，默认值0 
+<script>
+    var num = 10;
+    var PI = 3.12;
+    //八进制0~7，前面加0是八进制
+    var num1 = 010;
+    console.log(num1);
+    //十六进制0~9 a~f 前面加0x就是十六进制
+    var num2 =0xa;
+    console.log(num2);
+    //数字型的最大值
+    console.log(Number.MAX_VALUE);//1.7976931348623157e+308
+    //数字型最小值
+    console.log(Number.MIN_VALUE);//5e-324
+    //infinity无穷大，大于任何值
+    console.log(Number.MAX_VALUE * 2);
+    //-infinity无穷小，小于任何值
+    console.log(-Number.MAX_VALUE * 2);
+    //NaN，Not a number非数值
+    console.log('hh'-10);
+    //isNan()判断变量是否是非数字，并且返回一个值，是数字false，不是数字true
+    console.log(isNaN(12));//false
+    console.log(isNaN('嘻嘻'));//true
+</script>
+2）字符串型（单引号或双引号都可以）
+嵌套关系（外双内单，内双外单
+字符串的转义符(转义字符要写到引号里面)（\n（newline）换行符）;\\斜杠\;\'单引号；\"双引号；\t（tab缩进）;\b（blank空格））
+<script>
+    var str = '我是一个\n"美女"'
+    console.log(str);
+</script>
+举例
+<script>
+    alert('商场里一对男女交完钱，并肩往柜台走，女的手里的20元掉在地上，她刚要去捡，男的大喝一声：“别动”。\n瞬间以为女的是不是怀孕了，男的怕她弯腰啊，很有爱的样子，谁知道那二货接着的一句话瞬间让我目瞪口呆：“我的！”')  
+</script>
+3)检测获取字符串长度（.length）
+<script>
+    var str = '这是几个文字';
+    console.log(str.length);
+</script>
+4)字符串拼接（字符串+任何类型）
+数值相加，字符相连-->
+<script>
+    console.log('哈哈'+10);//哈哈10
+</script>
+<!-- <script>
+    var x = 10;//数字型
+    x = 'pink';//字符串
+
+</script> -->
+</head>
+<body>
+    
+</body>
+</html>
