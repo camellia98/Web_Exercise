@@ -150,7 +150,19 @@ js是动态语言 变量的类型是可以变化的
     var age =  prompt('请输入您的年龄：');
     var sex =  prompt('请输入您的性别：');
     alert('您的姓名：' + myname  +'\n您的年龄：' + parseInt(age) + '\n您的性别：' + sex);
-</script>-->
+</script>
+3）转换字符串（tostring（）转成字符串、string（强制转换字符串）、加号拼接字符串-->
+<script>
+    //变量.tostring（）转成字符串
+    var num = 10;
+    var str = num.toString();
+    console.log(str);
+    console.log(typeof str);
+    // String(变量)
+    console.log(String(num));
+    // 利用+拼接字符串的方法实现转换效果 隐式转换
+    console.log(num + '');
+</script>
 </head>
 <body>
 </body>

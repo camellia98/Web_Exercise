@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 流程控制（顺序结构（按照顺序执行）、分支结构、循环结构）
+1.分支结构 (if)（最终只会执行一个）
+<script>
+    //如果真执行语句1，假执行语句2
+    // if(条件表达式){
+    //     //执行语句1
+    // }
+    else{
+         //执行语句2
+    }
+    //执行思路 如果if里面的条件表达式结构为真true则
+    // 如果if条件表达式结果为假 则执行大括号里面的语句 则执行if 语句后面的代码
+    if(3 < 5){
+        console.log('hhhh');
+    }
+</script>
+举例1
+<script>
+    var age = prompt('请输入您的年龄：');
+    if(age>=18){
+        alert('允许进入');
+    }
+    else{
+        alert('不允许');
+    }
+</script>
+举例2被400整除是闰年
+<script>
+    var year = prompt('请输入年份：');
+    if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
+        alert('闰年');
+    }
+    else{
+        alert('平年');
+    }
+</script>
+举例3
+<script>
+    var myname = prompt('请输入您的名字：');
+    if (myname === '刘德华'){
+        alert('中奖五元');
+    }
+    else{
+        alert('没中奖');
+        }
+</script>
+2.多分支语（只能执行一个语句）句（if else if）
+<script>
+    if(条件表达式1){
+        语句1
+    }
+    // else if可以写很多个
+    else if(条件表达式2){
+        语句2
+    }
+    else{
+        语句3
+    }
+</script>
+举例1（从大到小）-->
+<script>
+    scpre(分数)
+    var score = prompt('请输入您的成绩:');
+    if(score >= 90){
+        alert('A');
+    }
+    else if(80 <= result && result < 90 )
+    {
+        alert('B');
+    }
+    else if(70 <= result && result < 80 )
+    {
+        alert('C');
+    }
+    else if(60 <= result && result < 50 )
+    {
+        alert('D');
+    }
+    else{
+        alert('D');
+    }
+</script>
+</head>
+<body>
+    
+</body>
+</html>
