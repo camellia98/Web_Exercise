@@ -63,7 +63,7 @@
         语句3
     }
 </script>
-举例1（从大到小）-->
+举例1（从大到小）
 <script>
     scpre(分数)
     var score = prompt('请输入您的成绩:');
@@ -84,6 +84,56 @@
     }
     else{
         alert('D');
+    }
+</script>
+3.三元表达式（条件表达式 ？ 表达式1 ：表达式2）（条件表达式为真则返回表达式1的值，如果条件表达式为假则返回表达式2的值）
+<script>
+    var num = 10;
+    var result = num > 5 ? '是的' : '不是';
+    console.log(result);
+</script>
+举例
+<script>
+    var num = prompt('请输入数字');
+    var result = num < 10 ? '0' + num : num ;
+    alert(result);
+</script>
+4.分支流程控制switch语句(转换、开关);case小例子或选项的意思
+执行思路 利用我们的表达式的值和case后面的选项值相匹配，如果匹配上，就执行该case里面的语句，如果都没有匹配上，则执行default里面的语句
+switch(表达式){
+    case value1:
+    执行语句1;
+    break;
+     case value2:
+    执行语句2;
+    break;
+    default;
+    执行最后的语句;
+}
+<script>
+    switch (2) {
+       case 1:
+            console.log('这是1');
+            break;
+        case 2:
+            console.log('这是2');
+            break;
+        default:
+            console.log('没有');
+    }
+</script>
+1)switch注意事项（1.在开发里面，表达式经常写成变量；2.num的值和case里面的值相匹配的时候是全等，必须是值和类型一致才可以）-->
+<script>
+    var num = 3;
+    switch (num) {
+        case 1:
+            console.log(1);
+            break;
+        case 3:
+            console.log(1);
+            break;
+        default:
+            break;
     }
 </script>
 </head>
