@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- 流程控制（顺序结构（按照顺序执行）、分支结构、循环结构）
-1.分支结构 (if)（最终只会执行一个）
+1.分支结构 (if)（最终只会执行一个）(判断范围用if)
 <script>
     //如果真执行语句1，假执行语句2
     // if(条件表达式){
@@ -98,7 +98,7 @@
     var result = num < 10 ? '0' + num : num ;
     alert(result);
 </script>
-4.分支流程控制switch语句(转换、开关);case小例子或选项的意思
+4.分支流程控制switch语句(转换、开关);case小例子或选项的意思（固定值就用switch）
 执行思路 利用我们的表达式的值和case后面的选项值相匹配，如果匹配上，就执行该case里面的语句，如果都没有匹配上，则执行default里面的语句
 switch(表达式){
     case value1:
@@ -122,7 +122,7 @@ switch(表达式){
             console.log('没有');
     }
 </script>
-1)switch注意事项（1.在开发里面，表达式经常写成变量；2.num的值和case里面的值相匹配的时候是全等，必须是值和类型一致才可以）-->
+1)switch注意事项（1.在开发里面，表达式经常写成变量；2.num的值和case里面的值相匹配的时候是全等，必须是值和类型一致才可以3.break是退出循环）
 <script>
     var num = 3;
     switch (num) {
@@ -135,6 +135,108 @@ switch(表达式){
         default:
             break;
     }
+</script>
+举例1
+<script>
+    //变量相同，因为输入的时候与case匹配就可以实现
+   var fruit = prompt('请输入一个水果');
+    switch (fruit) {
+        case '西瓜':
+            alert('1.0/1斤');
+            break;
+        case '橙子':
+            alert('2.0/1斤');
+            break;
+        default:
+            alert('没有该水果');
+            break;
+    }
+</script>
+举例2
+<script>
+    var time = prompt('请输入时间');
+    if(time <= 6){
+        alert('凌晨好');
+    }
+    else if(time <= 12){
+        alert('中午好');
+    }
+    else if(time <= 18){
+        alert('傍晚好');
+    }
+     else if(time <= 23){
+        alert('深夜好');
+    }
+</script>
+举例输入两个数，谁最大弹出谁
+<script>
+     var num1 = prompt('请输入第一个数');
+     var num2 = prompt('请输入第二个数');
+     if(num1 > num2){
+        alert(num1);
+     }
+     else if (num1 < num2){
+        alert(num2);
+     }
+</script>
+举例输入一个数，判断奇偶数
+<script>
+    var num = prompt('请输入一个数');
+    if(num % 2 == 0){
+        alert('偶数')
+    }
+    else{
+        alert('奇数');
+    }
+</script>
+举例输入1~7的数字,返回星期几
+<script>
+    var num = prompt('请输入1~7的数字');
+    switch (num) {
+        case "1":
+            alert('星期一');
+            break;
+        case '2':
+            alert('星期二');
+            break;
+        case '3':
+            alert('星期三');
+            break;
+        case '4':
+            alert('星期四');
+            break;
+        case '5':
+            alert('星期五');
+            break;
+        case '6':
+            alert('星期六');
+            break;
+        case '7':
+            alert('星期日');
+            break;
+            
+        default:
+            break;
+    }
+</script>
+举例-->
+<script>
+    var money = prompt('请输入班子口袋的钱');
+    if(money >= 2000){
+        alert('请大家吃西餐');
+    }
+    else if(money >= 1500){
+        alert('请大家吃快餐');
+    }        
+    else if(money >= 1000){
+        alert('请大家喝饮料');
+    }
+    else if(money >= 500){
+        alert('请大家吃棒棒糖');
+    }    
+    else{
+        alert('下次把钱带够');
+    }    
 </script>
 </head>
 <body>

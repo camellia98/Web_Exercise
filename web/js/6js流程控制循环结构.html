@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+1.for循环，重复执行某些代码（重复执行叫循环体）
+for（初始化变量;条件表达式;操作表达式）{循环体 } 
+1)初始化变量就是var声明的一个普通变量，通常用于计数器使用
+2)条件表达式就是用来决定每一次循环是否继续执行，就是终止的条件
+3）操作表达式就是每次循环最后执行的代码，经常用语计数器变量进行更新（递增或递减）
+        <script>
+            for(var i = 1; i <= 100; i++){
+                console.log('你好');
+            }
+            // 1.先执行初始化变量(var i = 1，在for循环只执行一次 i是index
+            // 2.在去执行i <= 100来判断是否满足条件，如果满足就执行console.log('你好');（循环体），不满足推出循环；
+            // 3.最后执行i++和++i在这的作用的一样的，第一轮结束，在去执行第2条
+        </script>
+拓展断点调试（点击浏览器-右键-检查-源代码-点击呢一行前面的数字再刷新-点击右上角往下的箭头就知道该代码的顺序操作，在点击呢一行前面的数字再刷新就取消断点调试）
+for循环执行相同的代码
+<script>
+    var num = prompt('请输入数字');
+    for(var i = 1; i <= num; i++){
+        console.log('哈哈哈哈');
+    }
+</script>
+for循环执行不同的代码
+<script>
+    // for(var i = 1; i <= 100; i++){
+    //     console.log('今年' + i + '岁了');
+    // }
+    for(var i = 1; i <= 100; i++){
+        if(i == 1){
+            console.log('今年1岁乐乐乐');
+        }
+        else if(i == 100){
+            console.log('今年100岁呀呀呀');
+        }
+        else{
+            console.log('今年' + i + '岁了');
+        }
+    }
+</script>
+求1~100的和
+<script>
+    var sum = 0;
+    for(var i = 1; i<=100; i++){
+        sum = sum +i;
+    }console.log(sum);
+</script>
+求1~100的平均值
+<script>
+    var average = 0;
+    var sum = 0;
+    for(var i =1; i <= 100; i++){
+       sum = sum +i;
+    }
+    average = sum/100;
+    console.log( average);
+</script>
+求1~100的奇数和。偶数和
+<script>
+    var even = 0;
+    var odd = 0;
+    for(var i = 1; i<=100; i++){
+        if(i % 2 == 0){
+            even =  even+i;
+        }
+        else{
+            odd = odd +i;
+        }
+    }console.log('偶数'+ even);
+    console.log('奇数'+ odd);
+</script>
+求1~100的能被3整除
+<script>
+    var sum = 0;
+    for(var i = 1; i <= 100;i++){
+        if(i % 3 == 0){
+            sum = sum +i;
+        }
+    }console.log(sum);
+</script>-->
+</head>
+<body>
+    
+</body>
+</html>
