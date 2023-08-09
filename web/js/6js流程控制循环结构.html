@@ -82,7 +82,78 @@ for循环执行不同的代码
             sum = sum +i;
         }
     }console.log(sum);
-</script>-->
+</script>
+求学生成绩
+<script>
+    var Number = prompt('请输入班级人数');
+    var average = 0;
+    var sum = 0;
+    for(var i = 1; i <= Number; ++i){
+        var score = prompt('请输入第'+ i +'个学生成绩');
+        // 需要转换数字型
+        sum = sum + parseFloat(score);
+    }
+    average = sum / Number;
+    alert('成绩平均值为：' + average);
+</script>
+一行五个符号
+<script>
+    // 定义一个空变量，这样就可以一排显示♬♬♬♬♬
+    var str = '';
+    for(var i = 1; i <=5;i++){
+        str = str + '♬'
+    }
+    console.log(str);
+</script>
+2.双层for循环（外部循环执行一次，里面循环执行全部知道结束）
+for(外层的初始化变量;外层的条件表达式;外层的操作表达式){
+    for(内层的初始化变量;内层的条件表达式;内层的操作表达式){
+        执行语句
+    }
+}
+<script>
+    for(var i = 1; i <=3;i++){
+        console.log('这是'+i);
+        for(var j = 1; j <=3;j++){
+        console.log('这是'+j);
+        }
+    }
+</script>
+举例（输入第n行第bn列）
+<script>
+    var str = '';
+    var rows = prompt('请输入行数');
+    var cols = prompt('请输入列数');
+    for(var i = 1; i <= rows; i++){
+       
+        for(var j = 1; j <= cols; j++){
+            str = str + '❤';
+          
+        }
+        // 如果一行打印完毕5个星星就要另起一行需要加换行符\n
+        str = str + '\n';
+    }  
+   console.log(str);
+</script>
+打印倒三角形的案例
+<script>
+    var str = '';
+    for(var i = 1;i <= 10;i++){//外层循环控制行数
+        for(var j = i; j<=10;j++){//里层循环打印的个数不一样，所以变量等于外层循环j=i
+            str = str + '✉';
+        }
+        str = str + '\n';
+    }
+    console.log(str);
+</script>
+九九乘法表-->
+<script>
+    for(var i = 1;i<=9;i++){
+        for(var j = 1;j<=9;j++){
+            if()
+        }
+    }
+</script>
 </head>
 <body>
     
