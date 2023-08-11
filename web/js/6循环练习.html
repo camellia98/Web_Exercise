@@ -4,7 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
+    <!-- 
+1.求1~100之间所有数的总和与平均值
+     
+     <script>
+        var sum = 0;
+        var average = 0;
+        for(var i = 1; i <= 100; i++){
+            sum = sum + i;
+        }
+        average = sum / 100;
+        console.log('和'+ sum);//5050
+        console.log('平均值' + average);//50.5
+     </script>
+2.求1-100之间所有偶数的和
+<script>
+    var even = 0;
+    for (var i = 1; i <= 100; i++){
+        if(i % 2 == 0){
+            even = even + i ;
+        }
+    }console.log(even);//2550
+</script>
+3.求100以内7的倍数之和
+    <script>
+        var sum = 0;
+        for(var i = 1; i <= 100; i++){
+            if(i % 7 == 0){
+                sum = sum + i;
+            }
+        }console.log(sum);//735
+    </script>
+4.使用for循环打印矩形，要求每次只能输出一个心
+<script>
+    var str = '';
+    for(var i = 1; i <= 4;i++){
+        for(var j = 1 ;j <= 5;j++ ){
+            str = str + '❤';
+        }
+        str = str + '\n';
+    }console.log(str);
+</script>
+5.使用for循环打印三角形
+<script>
+    var str = '';
+    for(var i = 1;i <=5;i++){
+        for(var j = 1; j<=i;++j){
+            str = str + '❤';
+        }
+        str += '\n';
+    }console.log(str);
+</script>
+6.使用for打印九九乘法表
+<script>
+    var str = '';
+    for(var i = 1;i <=9;i++){
+        for(var j = 1;j <= i;j++){
+            str = str + j + 'X' + i + '=' + j*1 + '\t';
+        }
+        str += '\n';
+    }console.log(str);
+</script>
+7.js接收用户输入的用户名和密码，若用户名为 “admin” ,且密码为 “123456” ,则提示用户登录成功! 否则，让用户一直输入。
+<script>
+    var text = prompt('请输入用户名');
+    var password = prompt('请输入密码')
+    while(text !== 'hh' || password !== '123'){
+    text = prompt('请输入用户名');
+    password = prompt('请输入密码')
+    }
+    alert('登陆成功');
+</script>
+8.用js实现求整数1～100的累加值，但要求跳过所有个位为3的数
+<script>
+    var sum = 0;
+    for(var i = 1;i <= 100; i++){
+        if(i % 10 == 3 ){
+            continue;
+        }
+        sum = sum +i;
+    }console.log(sum);//4570
+</script>-->
+<script>
+    var ATM = prompt('请输入您要的操作\n 1.存钱\n2.取钱\n3.显示余额\n4.退出')
+    var money = 100;
+    if()
+</script>
+?
+<script>
+    var money = 100;
+          while (true) {
+              var action = prompt("请输入你要的操作：\n 1.存钱 \n 2.取钱 \n 3.显示余额 \n 4.退出");
+              switch (parseInt(action)) {
+                  case 1:
+                      var money1 = prompt('请输入存入金额');
+                      money = money + parseInt(money1)
+                      alert('你的余额为' + money + '元');
+                      break;
+                  case 2:
+                      var money2 = prompt('请输入取出金额');
+                      if (money < money2) {
+                          alert('你的余额不足');
+                      } else {
+                          money = money - parseInt(money2);
+                          alert('你已取出，你的余额为' + money + '元');
+                      }
+                      break;
+                  case 3:
+                      alert("你的余额为" + money + '元');
+                      break;
+                  case 4:
+                      alert('退出成功');
+                      break;
+                  default:
+                      alert("你输入的不正确");
+                      break;
+              }
+              if (action == 4) {
+                  break;
+              } //  这主要想让用户选择4时跳出循环
+          }
+      </script>
+  
 <body>
     
 </body>
