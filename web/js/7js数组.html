@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+1.数组（Array）(一定要用逗号分隔）
+（一组数据的集合，并且存储在单个变量下的优雅方式）
+     <script>
+        // 利用new创建数组
+        var arr = new Array();//创建一个空的数组
+     </script>
+1）利用数组自变量创建数组 var arr= [（数组元素，可以放任何类型）];创建一个空的数组
+2）数组的索引（下标，数组下标从0开始）
+3）获取数组元素 格式 数组名[索引号（下标）(访问)]
+<script>
+    var arr = [1,2,'嘻嘻',true];//索引号从零开始（0,1,2,3,）
+    console.log(arr[2]);//获取某一个数组元素
+    console.log(arr[4]);//因为没有定义这个数组元素，所以输出结果是undefined
+// 举例习题,输出星期日
+    var arr1 = ['星期一','星期二','星期三','星期四','星期五','星期六','星期日'];
+    console.log(arr1[6]);
+</script>
+4）遍历数组（把数组每个元素从头到尾都访问一次）
+<script>
+    var arr = ['red','green','blue'];
+    for(var i = 0; i < 3;i++){//因为我们数组索引号是从0开始，所以i必须从0开始 ，i<3，不能<=3
+        console.log(arr[i]);//输出的时候arr[i]，i计数器当索引号来引用
+    }
+</script>
+练习
+<script>
+    var arr = ['关羽','张飞','马超','赵云','黄忠','刘备','姜维',];
+    for(var i = 0; i < 7; i++){
+        console.log(arr[i]);
+    }
+</script>
+5)数组的长度,（.length）（数组的长度是元素的个数）（动态监督数组元素的个数）
+<script>
+    var arr = ['关羽','张飞','马超','赵云','黄忠','刘备','姜维',];
+    for(var i = 0; i < arr.length; i++){//数组的长度（数组名加.length）
+        console.log(arr[i]);
+    }
+</script>
+练习求数组[2,6,1,7,4]的和和平均值
+<script>
+    var arr = [2,6,1,7,4];
+    var sum = 0;
+    var avarage = 0;
+    for(var i = 0; i< arr.length;i++){
+        sum = sum + arr[i];//加数组元素 arr[i] ，计数器是i
+    }avarage = sum / arr.length;//数组的长度
+    console.log(sum,avarage);//20,4;想要输出多个变量用逗号分隔
+</script>
+求最大值<script>
+    var arr = [2,6,1,77,25,7];
+    var max = arr[0];//从第1个元素开始比较
+    var t = 0;
+    for(var i = 0; i < arr.length;i++){//因为第一个元素已赋值，所以从第二个开始
+        if(max <  arr [i])
+            max =  arr [i];
+
+    }console.log(max);
+</script>
+求最小值<script>
+    var arr = [2,6,1,77,25,7];
+    var min = arr[0];
+    for(var  i = 1; i < arr.length;i++){
+        if(min > arr[i]){
+            arr[i] = min;
+        }
+    }console.log(min);
+</script>
+['red','green','blue','pink']改为字符串，并且用！隔开
+<script>
+    var arr = ['red','green','blue','pink'];
+    var str = '';
+    var sep = '!';//加一个变量方便修改
+    for(var i = 0;i < arr.length;i++){
+
+        str += arr[i] + sep;
+    }console.log(str);
+</script>
+6）数组新增元素（修改length长度）-->
+</head>
+<body>
+    
+</body>
+</html>
