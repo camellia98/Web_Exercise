@@ -82,7 +82,80 @@
         str += arr[i] + sep;
     }console.log(str);
 </script>
-6）数组新增元素（修改length长度）-->
+6）数组新增元素（
+（1修改length长度）
+<script>
+    var arr= ['red','green','blue'];
+    console.log(arr.length);//3
+    arr.length = 5;//我们把数组的长度修改为5，里面有5个元素
+    console.log(arr);//(5) ['red', 'green', 'blue', 空 ×2]
+    console.log(arr[3]);//没有给值，默认undefined
+    console.log(arr[4]);
+</script>
+(2修改索引号
+<script>
+    var arr= ['red','green','blue'];
+    arr[3] = 'hhh';
+    arr[0] = 'yellow';//这个是替换的元素
+    console.log(arr);//['red', 'green', 'blue', 'hhh']
+    arr = '有点意思';
+    console.log(arr);//不要直接给数组名赋值，否则里面的数组元素都没有了
+</script>
+新建数组，里面有10个整数
+<script>
+    var arr = [];
+    for(var i = 0; i < 10; i++){
+        arr[i] = i+1;
+    }console.log(arr);
+</script>
+[2,0,6,1,77,0,52,0,7,25]中大于等于10的元素选出来，放入新数组；
+方法1<script>
+    var arr = [2,0,6,1,77,0,52,0,7,25];
+    var newarr = [];
+    var j = 0;//数组索引号从0开始
+    for (var i = 0;i < arr.length;i++){
+        if(arr[i] >= 10){
+            //新数组索引号必须从0开始，任何依次递增
+            newarr[j] = arr[i];
+            j++;
+        }
+    }console.log(newarr);//[77, 52, 25]
+</script>
+方法2
+<script>
+     var arr = [2,0,6,1,77,0,52,0,7,25];
+    var newarr = [];
+    for (var i = 0;i < arr.length;i++){
+        if(arr[i] >= 10){
+            //数组的长度是从0开始
+            newarr[newarr.length] = arr[i];
+        }
+    }console.log(newarr);
+</script>
+数组案例
+删除制定数组， [2,0,6,1,77,0,52,0,25,7]中的0去掉
+<script>
+    var arr = [2,0,6,1,77,0,52,0,25,7];
+    var newArr = [];
+    for(var i = 0;i < arr.length;i++){
+        if(arr[i] !== 0){
+            newArr[newarr.length] = arr[i];
+        }
+    }console.log(newArr);
+</script>
+反转数组<script>
+    var arr = ['red','green','blue','pink','purple']
+    var str = [];
+    for(var i = arr.length-1; i>=0;i--){//var i = arr.length-1是因为索引号比元素减1，i>=0，必须从0开始所以等于0
+        str[str.length] = arr[i];
+    }console.log(str);
+</script>-->
+<script>
+    var arr = ['关羽','张飞','马超','赵云','黄忠','刘备','姜维',];
+    for(var i = 0; i < 7; i++){
+        console.log(arr[i]);
+    }
+</script>
 </head>
 <body>
     

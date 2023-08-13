@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,4 +12,45 @@
 
 <script>
     document.getElementById("test").innerHTML= "sdjfhaisudhfau"
-</script>
+</script> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 用户输入任意两个数字的任意算数运算（简单的计算器小功能）并弹出运算后的结果。
+        function getRes(num1, symbol, num2) {
+            switch (symbol) {
+                case '+':
+                    return parseInt(num1) + parseInt(num2);
+                    break;
+                case '-':
+                    return parseInt(num1) - parseInt(num2);
+                    break;
+                case '*':
+                    return parseInt(num1) * parseInt(num2);
+                    break;
+                case '/':
+                    return parseInt(num1) / parseInt(num2);
+                    break;
+                default:
+                    return ('运算符错误');
+                    break;
+            }
+        }
+        //测试代码
+        num1 = prompt('输入第一个数字');
+        symbol = prompt('输入运算符');
+        num2 = prompt('输入第二个数字');
+        alert('运算结果为:' + getRes(num1, symbol, num2));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
