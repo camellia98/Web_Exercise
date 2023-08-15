@@ -81,7 +81,8 @@
     }
     var num = prompt('输入一个想要判断是否为素数的数字');
     alert(getnum(num));
-   </script>-->
+   </script>
+   用函数翻转数组
    <script>
     // reverse翻转
     function reverse(arr){
@@ -94,6 +95,57 @@
         var str = reverse([1,4,32,5]);
        console.log(str);
    </script>
+用函数实现冒泡排序
+<script>
+    // sort 排序
+    function sort(arr){
+        for(var i = 0;i < arr.length -1;i++){
+            for(var j = 0;j < arr.length - i - 1;j++){
+                if(arr[j] > arr[j+1]){
+                    var temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }return arr;
+    }var str = sort([3,4,2,1]);
+    console.log(str);
+
+</script>
+用函数判断闰年
+<script>
+    function isRunYear(year){
+        var flag = false;
+        if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
+           flag = true;
+        }
+        return flag;
+    }
+    console.log(isRunYear(2000));
+</script>
+输入年份，-->
+<script>
+    // 按顺序执行
+    function backDay(){
+        var year = prompt('请输入年份');
+        if(isRunYear(year)){//在这显示调用是true或false
+            alert('当前年份是闰年2月都28天');
+        }
+        else{
+            alert('当前年份是平年2月都29天');
+        }
+    }
+    backDay();//调用者
+
+    function isRunYear(year){
+        // 写true和false是为了被调用，如果是汉字，调用实现不了
+        var flag = false;
+        if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
+           flag = true;
+        }
+        return flag;
+    }
+</script>
 </head>
 <body>
     
