@@ -24,7 +24,52 @@ var num =10；
             console.log(sum);
         }
         fu();
-     </script>-->
+     </script>
+2.变量作用域
+1）全局变量(在函数里面也能运用)（如果在函数内部，没有声明直接赋值的变量属于全局变量）
+<script>
+    var num = 10;
+    console.log(num);
+    function fn(){
+        console.log(num);
+    }
+    fn();
+</script>
+2）局部变量（只能在函数内部使用的变量）(函数的形参也是局部变量)
+<script>
+    function fun(){
+        num = 12;
+    }
+    fun();
+    console.log(num);
+</script>
+3）全局和局部的区别（1.全局变量只有浏览器关闭的时候才会结束，比较占内存；2.局部变量程序执行完毕就会结束）
+3.拓展js没有块级作用域（js是在es6增加了块级作用域）块级作用域是{}
+4.作用域链(就近原则)(内部函数访问外部函数的变量，采取的是链式查找的方式来决定取那个值)
+<script>
+    var num = 10;
+    function fu(){
+        var num = 20;
+
+        function fun(){
+            console.log(num);//20,就近原则
+        }
+        fun();
+    }
+    fu();
+</script>
+举例-->
+<script>
+    function f1(){
+        var num = 123;
+
+        function f2(){
+            console.log(num);//123因为和123在同一级就近（站在目标，一层一层往外找，那个近就是那个）
+        }
+        f2();
+    }var sum = 456;
+    f1();
+</script>
 </head>
 <body>
     
