@@ -70,11 +70,13 @@
     console.log(obj.uname,obj.sex);
     obj.sayhi();
 </script>
-3.利用构造函数创建对象（总与new运算符一起使用）
+3.利用构造函数创建对象（泛指的某一大类）（总与new运算符一起使用）
 （构造函数不需要return）
 （我们利用函数的方法，重复这些相同的代码，成为构造函数）
 （因为函数不一样，里面封装的不是普通代码而是对象）
 （构造函数 就是把我们对象里面一些相同的属性和方法抽象出来封装到函数里面）
+（我们只要new star（）调用了函数就创建一个对象 1dh{}）
+(属性和方法必须加this)
 构造函数的语法格式（构造函数名第一个字母要大写）
 <script>
     function 构造函数名(){
@@ -83,18 +85,75 @@
     }
     new 构造函数名();
 </script>
--->
+
 <script>
     function Star(uname,age,sex){//形参
         this.name = uname;//形参转给这个值
         this.age = age;
         this.sex = sex; 
+        this.sing = function(sang){
+            console.log(sang);
+        }
     }
     var str = new Star('刘德华',18,'男');//实参
     console.log(typeof(str));
+    str.sing('冰雨');
     console.log(str.name);
 </script>
+举例<script>
+    function Star(uname,type,blood,attack){
+        this.name = uname;
+        this.type = type;
+        this.blood = blood;
+        this.attack = function(attack){
+            console.log(attack);
+        }
 
+    }
+    var LP= new Star('廉颇','力量型','500血量')
+    console.log(LP.name);
+    console.log(LP.type);
+    console.log(LP.blood);
+    LP.attack('近战');
+    var HY= new Star('后裔','射手型','100血量')
+    console.log(HY.name);
+    console.log(HY.type);
+    console.log(HY.blood);
+    HY.attack('远程');
+</script>
+4.拓展（构造函数与对象的相互联系）
+我们利用构造函数创建对象的过程称为对象的实例化
+5.new在构建函数的作用
+1)new 构建函数可以内存中创建一个空的对象
+2）this就会指向刚才创建的空对象
+3）执行构造函数里面的代码，给这个空对象添加属性和方法
+4）返回这个对象
+<script>
+    function Star(uname,age,sex){//形参
+        this.name = uname;//形参转给这个值
+        this.age = age;
+        this.sex = sex; 
+        this.sing = function(sang){
+            console.log(sang);
+        }
+    }
+    var str = new Star('刘德华',18,'男');//实参
+    </script>
+6.遍历对象 
+1）for（变量 in 对象）（对数组和对象进行循环）
+2）foe in里面的变量最好用k（key）-->
+<script>
+    var obj = {
+        name: '哈哈哈',
+        age:18,
+        sex:'男',
+        fn:function(){}
+    }
+    for(var k in obj){
+        console.log(k);//k是属性名
+        console.log(obj[k]);//obj是属性值，注意obj[k]
+    }
+</script>
 </head>
 <body>
     
