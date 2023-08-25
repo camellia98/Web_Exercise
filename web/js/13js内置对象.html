@@ -195,7 +195,7 @@ s = parselnt（总秒数%60）;计算秒数
     }
     console.log(countdown('2023-10-1 23:00:00'));//调用要按照字符串来写
 </script>
-3.数组对象-->
+3.数组对象
 <script>
     // 创建数组的两种方式
 // 1）数组字面量
@@ -207,6 +207,119 @@ s = parselnt（总秒数%60）;计算秒数
     var arr1 = new Array(2,3);//等价于[2.3]，里面有两个元素分别是2和3
     console.log(arr1);
 </script>
+反转数组
+<script>
+    function reverse(arr){
+        if(arr instanceof Array){
+        var newArr = [];
+        for(var i = arr.length - 1;i >= 0; i--){
+            newArr[newArr.length] = arr[i];
+        }
+            return newArr;
+        }
+        else{
+            return '这个参数必须是数组[1,2,3,4]'
+        }
+    }console.log(reverse([1,2,3]));
+//1) instanceof 运算符，检测是否为数组
+    var arr = [];
+    var obj = {};
+    console.log(arr instanceof Array);//true
+    console.log(obj instanceof Array);//这不是数组就会显示false
+// 2) Array.isArray(参数) 检测是否为数组
+    var arr1 = [];
+    console.log(Array.isArray(arr1));
+</script>
+1）添加数组元素
+<script>
+//1.push() 在数组的末尾 添加一个或者多个数组元素
+    var arr = [1,2,3];
+    // arr.push(4,5,'哈哈哈');//参数直接写数组元素就可以，用逗号隔开
+    console.log(arr.push(4,5,'哈哈哈'));//返回的结果是新数组的长度
+    console.log(arr);//变成六个元素
+//2.unshift 在数组的开头  添加一个或者多个数组元素
+    // arr.unshift(7,'red');//参数直接写数组元素就可以，用逗号隔开
+    console.log(arr.unshift(7,'red'));//返回的结果是新数组的长度
+    console.log(arr);
+</script>
+2)删除数组元素
+<script>
+    // 1.pop() （只能删除一个元素）删除最后一个数组元素 数组长度减1 无参数 返回删除的元素的值
+    var arr = [1,2,3,4];
+    // arr.pop();//删除最后一个元素
+    console.log(arr.pop());//返回值是删除的呢个元素
+    console.log(arr);
+    // 2.shift() 删除第一个数组元素 数组长度减1 无参数 返回第一个元素的值
+    // arr.shift();删除第一个元素
+    console.log(arr.shift());//返回值是删除的呢个元素
+    console.log(arr);
+</script>
+举例
+<script>
+    var arr = [1500,1200,2000,2100,1800];
+    var newArr = [];
+    for(var i = 0;i < arr.length;i++){
+        if(arr[i] < 2000){
+            // newArr[newArr.length] = arr[i];
+            newArr.push(arr[i]);//增加数组元素将小于2000的给newArr
+        }
+    }console.log(newArr);
+</script>
+3）数组排序
+<script>
+// 1.翻转数组reverse
+    var arr = [1,2,'嘻嘻'];
+    arr.reverse();
+    console.log(arr);
+// 2.数组排序(冒泡排序)sort
+    var arr1 = [3,63,22,8];
+    arr1.sort(function(a,b){
+        // return a - b;//升序sort排十位以上的数字就需要添加函数
+        return b - a;//降序
+    });
+    console.log(arr1);
+</script>
+4）数组索引
+<script>
+// 1.返回数组索引号 indOf（数组元素） 返回该数组的索引号；注意如果有相同的数组元素，只会返回第一个满足条件的索引号；如果在该数组找不到该元素，则返回-1；从前查找
+    var arr = ['rde',2,'yellow',6,'yellow'];
+    console.log(arr.indexOf('yellow'));//2；会返回第一个满足条件的索引号
+    console.log(arr.indexOf(3));//如果在该数组找不到该元素，则返回-1
+//2.返回数组索引号 lastIndexOf（数组元素） 返回该数组的索引号；如果在该数组找不到该元素，则返回-1，和indOf用法一样，顺序是从后面查找，不是改变索引号的顺序
+</script>
+举例数组去重['c','a','z','a','x','a','x','c','b']要求去除重复元素
+1.目标：把旧数组里面不重复的元素选取出来放在新数组中
+2.核心算法：遍历数组，拿着旧数组去查新数组，如果该元素在新数组里面没有出现过，我们就添加，否则不添加
+3.如何知道元素有没有存在，利用indOf（数组元素），如果返回-1，就说明新数组没有该元素
+<script>
+    function unique(arr){
+        var newArr = [];
+        for(var i = 0; i < arr.length;i++){
+
+            if(newArr.indexOf(arr[i]) === -1){
+                newArr.push(arr[i]);
+            }
+        }
+        return newArr;
+    }
+    var demo = unique(['c','a','z','a','x','a','x','c','b']);
+    console.log(demo);
+</script>
+5)数组转换为字符型
+<script>
+// 1.toString()转换字符串
+    var arr = [1,2,3];
+    console.log(arr.toString());
+// 2.join（分隔符）
+    var arr1 = ['red','bule','pink'];
+    console.log(arr1.join());//默认分隔符是逗号red,bule,pink
+    console.log(arr1.join('-'));//red-bule-pink
+
+</script>
+6）拓展
+1.concat()连接两个或多个数组，不影响原数组，返回一个新的数组
+2.slice()数组截取slice(begin,end)返回被截取项目的新数组
+3.splice()数组删除splice(第几个开始，要删除个数)返回被删除项目的新数组（会影响原数组）-->
 </head>
 <body> 
     
