@@ -377,7 +377,95 @@ s = parselnt（总秒数%60）;计算秒数
 4）根据位置返回字符
 1.charAt(index)返回指定位置的字符（index 字符串索引号）（使用str.charAt(0)）
 2.charCodeAt(index)获取指定位置处字符的ASCII码（inde索引号）（使用str.charCodeAt(0)）
-3.str[index]获取指定位置-->
+3.str[index]获取指定位置
+<script>
+// 1.charAt(index)返回指定位置的字符
+    var str = 'andy';
+    console.log(str.charAt(3));//y
+// 遍历所有字符
+    for(var i = 0;i < str.length;i++){
+        console.log(str.charAt(i));
+    }
+// 2.charCodeAt(index)获取指定位置处字符的ASCII码(是一个表格对应各种数字和符号)
+    console.log(str.charCodeAt(0));//97
+// 3.str[index]获取指定位置
+    console.log(str[1]);//n
+</script>
+判断是否有该属性 对象['属性名']
+<script>
+    var o = {
+        age:18
+    }
+    if(o['age']){
+        console.log('有');
+    }
+    else{
+        console.log('没有');
+    }
+</script>
+举例判断字符串'abcoefoxyozzopp'中出现最多的字符，并统计次数
+<script>
+    var str = 'abcoefoxyozzopp';
+    var o = {};//把每个字符存给对象
+    for(var i = 0;i < str.length;i++){
+        var chars = str.charAt(i);
+        if(o[chars]){//o[chars]得到属性值
+            o[chars]++;
+        }
+        else{
+            o[chars] = 1;
+        }
+    }console.log(o);
+    // 遍历对象求最大值
+    var max = 0;
+    var ch = '';
+    for(var k in o){
+        if(o[k] > max){
+            max = o[k];//求属性值
+            ch = k;
+        }
+    }
+    console.log(max);
+    console.log(ch);
+</script>
+5）字符串的操作方法
+（3.slice(star,end)从star位置开始，截取到end位置，end取不到（star和end都是索引号）
+（4.substring(star,end)从star位置开始，截取到end位置，end取不到（star和end都是索引号）但不接受负值
+<script>
+    // （1.concat('字符串1','字符串2'....)连接两个或多个字符串，拼接字符串，等价于+
+    var str = 'andy';
+    console.log(str.concat('red'));//andyred
+    // （2.substr（'截取的起始的位置','截取几个字符'）
+    var str1 = '改革春风吹满地';
+    console.log(str1.substr(2,2));
+</script>
+6）字符串的其他方法
+<script>
+    // （1.替换字符 replace（'被替换的字符','替换之后的字符'）只会替换第一个字符，
+    var str = 'andy';
+    console.log(str.replace('a','b'));//bndy
+   
+</script>
+'abcoefoxyozzopp',把所有的o替换*
+<script>
+    var str = 'abcoefoxyozzopp';
+    while(str.indexOf('o') !== -1){
+        str = str.replace('o','*')
+    }
+    console.log(str);
+</script>
+
+<script>
+     // （2.字符转换为数组 split('分隔符')
+     var str = 'red,yellow,blue';
+     console.log(str.split(','));
+    //  (3.拓展)toUpperCase()转换大写；toLowerCase()转换小写
+</script>-->
+<script>
+    var str = 'abaasdffggghhjjkkgfddsssss3444343';
+    console.log(str.length);
+    
+</script>
 </head>
 <body> 
     
