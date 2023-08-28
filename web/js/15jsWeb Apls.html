@@ -12,12 +12,63 @@
 元素：标签就是元素，element
 节点：网页所有的内容都是节点，node
 1）获取元素
-（1.ID获取（getElementByld()）-->
-<script>
-    getel
-</script>
+（1.ID获取（getElementByld(必须字符串)）
+console.dir是打印返回元素的对象 更好的查看里面的属性和方法
 </head>
 <body>
-    
+    <div id="time">2023-02-03</div>
+    <script>
+        // 1.因为文档页面从上往下加载，所以现有标签，标签下面加script
+        // 2.get(获得)element(元素)by(通过) document(文档)必须用驼峰命名法
+        // 3.返回是元素对象
+        var timer = document.getElementById('time');
+        console.log(timer);// <div id="time">2023-02-03</div>
+        console.log(typeof timer);//object对象
+        console.dir(timer);//console.dir是打印返回元素的对象 更好的查看里面的属性和方法
+    </script>
 </body>
 </html>
+（2.根据标签名获取
+1.（getElemetsByTagName()返回带有指定标签名的对象的集合）
+返回的是 获取过来元素对象的集合 以伪数组的形式存储
+如果只有一个li 则返回的还是伪数组形式
+如果查找到元素。则返回的为空的伪数组
+</head>
+<body>
+   <ul>
+    <li>一二三四1</li>
+    <li>一二三四2</li>
+    <li>一二三四3</li>
+    <li>一二三四4</li>
+    <li>一二三四5</li>
+   </ul>
+    <script>
+      var lis = document.getElementsByTagName('li');
+      console.log(lis);
+      console.log(lis[0]);//返回的是 获取过来元素对象的集合 以伪数组的形式存储
+    //  依次打印可以根据遍历对象
+     for(var i = 0;i < lis.length;i++){
+        console.log(lis[i]);
+     }
+    </script>
+</body>
+</html>
+2.根据父级元素获取内部所有指定标签的子元素（父元素必须单个对象，获取的时候不包括父元素）
+element.getElementsByTagName('标签名')-->
+</head>
+<body>  
+    <ul>
+        <li>一二三四1</li>
+        <li>一二三四2</li>
+        <li>一二三四3</li>
+        <li>一二三四4</li>
+        <li>一二三四5</li>
+       </ul>
+       <script>
+        var ul = document.getElementsByTagName('ul');
+        console.log(ul[0].getElementsByTagName('li'));//填写伪元素的索引号来查找
+        // var ul1 = document.getElementById('e');
+        // console.log(ul1.getElementsByTagName('li'));
+       </script>
+</body>
+</html> 
