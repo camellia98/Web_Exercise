@@ -54,7 +54,7 @@ console.dir是打印返回元素的对象 更好的查看里面的属性和方�
 </body>
 </html>
 2.根据父级元素获取内部所有指定标签的子元素（父元素必须单个对象，获取的时候不包括父元素）
-element.getElementsByTagName('标签名')-->
+element.getElementsByTagName('标签名')
 </head>
 <body>  
     <ul>
@@ -72,3 +72,50 @@ element.getElementsByTagName('标签名')-->
        </script>
 </body>
 </html> 
+3.document.getElementsByClassName('类名')//根据类名返回元素对象集合
+</head>
+<body> 
+    <div class="box">盒子</div>
+    <div class="box">盒子</div>
+    <script>
+        var boxs = document.getElementsByClassName('box');
+        console.log(boxs);//输出的还是伪元素
+    </script>
+</body>
+</html>
+4.根据指定选择器返回第一个元素对象 document.querySelector('选择器'); 
+</head>
+<body> 
+    <div class="box">盒子1</div>
+    <div class="box">盒子2</div>
+    <script>
+        // 根据指定选择器返回第一个元素对象 document.querySelector('选择器');
+        var boxs =  document.querySelector('.box')//选择器要判断是哪个标签,只会选择第一个元素对象
+        console.log(boxs);
+        // 根据指定选择器返回document.querySelec('选择器');
+        var allBox = document.querySelectorAll('.box');
+        console.log(allBox);
+    </script>
+</body>
+</html>
+2.获取特殊元素（body,html）]
+</head>
+<body> 
+1.获取body元素 document.body
+    <script>
+        var bodyEle = document.body;
+        console.log(bodyEle);
+        console.dir(bodyEle);//是打印返回元素的对象 更好的查看里面的属性和方法
+    </script>
+2.获取html元素 document.documentElement;
+<script>
+    var htmlEle = document.documentElement;
+    console.log(htmlEle);
+</script>
+</body>
+</html>
+2）事件基础-->
+</head>
+<body> 
+</body>
+</html>
