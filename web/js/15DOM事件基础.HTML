@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
+<!-- 2）事件基础
+onmouseover(鼠标经过触发)、onmouseout(鼠标离开触发)、onfous（获得鼠标焦点触发)、onblur（失去鼠标焦点触发）、onmousemove（鼠标移动触发）、onmouseup（鼠标弹起触发）、onmousedown（鼠标按下触发）
     <button id="btn">唐壁虎</button>
     <script>
         // 点击一个按钮 弹出对话框
@@ -17,6 +19,16 @@
         btn.onclick = function(){
             alert('大魔王');
         }
-    </script>
+    </script>-->
+     <div>123</div>
+     <script>
+         // 1.获取事件源
+         var div = document.querySelector('div');
+         // 2.注册事件（绑定事件）
+         // 3.添加事件处理程序（采取函数赋值形式）
+         div.onclick = function(){
+             console.log('我诶选中了');
+         }
+     </script> 
 </body>
 </html>
