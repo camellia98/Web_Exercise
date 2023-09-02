@@ -4,16 +4,186 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- 1举例淘宝关闭二维码 
     <style>
-        *{
+        .box {
+            position: relative;
+            /* 绝对定位 */
+            width: 74px;
+            height: 88px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            font-size: 12px;
+            text-align: center;
+            color: #f40;
+        }
+        
+        .box img {
+            width: 60px;
+            margin-top: 5px;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: -1px;
+            left: -16px;
+            width: 14px;
+            height: 14px;
+            border: 1px solid #ccc;
+            line-height: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: pointer;
+        }
+    </style>
+    </head>
+    
+    <body>
+    <div class="box">
+        
+        <img src="../js/img/tao.png" alt="">
+        <i class="close-btn">×</i>
+    </div>
+    <script>
+        // 1. 获取元素 
+        var btn = document.querySelector('.close-btn');
+        var box = document.querySelector('.box');
+        // 2.注册事件 程序处理
+        btn.onclick = function() {
+            box.style.display = 'none';
+        }
+    </script>
+    </body>
+    </html>
+  2.循环精灵图
+    <style>
+        * {
             margin: 0;
             padding: 0;
         }
+        
+        li {
+            list-style-type: none;
+        }
+        
+        .box {
+            width: 250px;
+            margin: 100px auto;
+        }
+        
+        .box li {
+            float: left;
+            width: 24px;
+            height: 24px;
+            background-color: pink;
+            margin: 15px;
+            background: url(../js/img/sprite.png) no-repeat;
+        }
     </style>
+    </head>
+    
+    <body>
+    <div class="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script>
+        // 1. 获取元素 所有的小li 
+        var lis = document.querySelectorAll('li');
+        for (var i = 0; i < lis.length; i++) {
+            // 让索引号 乘以 44 就是每个li 的背景y坐标  index就是我们的y坐标
+            var index = i * 44;
+            lis[i].style.backgroundPosition = '0 -' + index + 'px';
+        }
+    </script>
+    </body>
+    
+    </html>
+3.显示文本框隐藏内容
+获取焦点onfoucs，失去焦点onblur
+<style>
+    input{
+        color: #999;
+    }
+</style>
 </head>
 <body>
-    <div>
-        
-    </div>
+    <input type="text" value="手机">
+    <script>
+        var text = document.querySelector('input');
+        text.onfocus = function(){//获取焦点
+            if(this.value == '手机'){
+                this.value = '';
+            }
+            this.style.color = '#333';//改变输入的字体颜色
+        }
+        text.onblur = function(){
+            if(this.value == ''){
+                this.value = '手机';
+            }
+            this.style.color = '#999';
+        }
+    </script>
+
 </body>
+    
+</html>
+4.仿新浪注册页面-->
+<style>
+    div{
+        width: 600px;
+        margin: 100px auto;
+
+    }
+    .message{
+        display: inline-block;
+        font-size: 12px;
+        color: #999;
+        background: url(../js/img/mess.png) no-repeat left center;
+        padding-left: 20px;
+    }
+    .wrong {
+            color: red;
+            background-image: url(../js/img/wrong.png);
+        }
+        
+        .right {
+            color: green;
+            background-image: url(../js/img/right.png);
+        }
+</style>
+</head>
+<body>
+    <div class="register">
+        <input type="password" class="ipt">
+        <p class="message">请输入6~16位密码</p>
+    </div>
+    <script>
+        var ipt = document.querySelector('.ipt');
+        var message = document.querySelector('.message');
+        ipt.onblur = function() {
+            // 根据表单里面值的长度 ipt.value.length
+            if (this.value.length < 6 || this.value.length > 16) {
+                // console.log('错误');
+                message.className = 'message wrong';
+                message.innerHTML = '您输入的位数不对要求6~16位';
+            } else {
+                message.className = 'message right';
+                message.innerHTML = '您输入的正确';
+            }
+        }
+    </script>
+</body>
+    
 </html>

@@ -103,6 +103,7 @@
         }
     </script>
 8.样式属性
+1）使用style来修改比较少的元素样式
 <style>
     div {
         width: 200px;
@@ -123,109 +124,32 @@
     </script>
 </body>
 </html>
-9举例淘宝关闭二维码
+2）使用clasName-->
 <style>
-    .box {
-        position: relative;
-        /* 绝对定位 */
-        width: 74px;
-        height: 88px;
-        border: 1px solid #ccc;
-        margin: 100px auto;
-        font-size: 12px;
-        text-align: center;
-        color: #f40;
+    div{
+        width: 200px;
+        height: 200px;
+        background-color: antiquewhite;
     }
-    
-    .box img {
-        width: 60px;
-        margin-top: 5px;
-    }
-    
-    .close-btn {
-        position: absolute;
-        top: -1px;
-        left: -16px;
-        width: 14px;
-        height: 14px;
-        border: 1px solid #ccc;
-        line-height: 14px;
-        font-family: Arial, Helvetica, sans-serif;
-        cursor: pointer;
+    .change{
+        background-color: rebeccapurple;
+        color: #fff;
+        font-size: 25px;
+        margin-top: 100px;
     }
 </style>
 </head>
-
 <body>
-<div class="box">
-    
-    <img src="../js/img/tao.png" alt="">
-    <i class="close-btn">×</i>
-</div>
-<script>
-    // 1. 获取元素 
-    var btn = document.querySelector('.close-btn');
-    var box = document.querySelector('.box');
-    // 2.注册事件 程序处理
-    btn.onclick = function() {
-        box.style.display = 'none';
+    <div class="first">文本</div>
+    <script>
+        var text = document.querySelector('div');
+        text.onclick = function(){
+        // 让我们当前元素的类名改为了change  
+        //1.我们可以通过修改元素的className更改元素的样式，适合样式多或复杂的情况
+        // this.className = 'change';
+        // 2.如果想要保留原先的类名
+        this.className = 'first change';
     }
-</script>
+    </script>
 </body>
-</html>
-10.循环精灵图-->
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
-    
-    li {
-        list-style-type: none;
-    }
-    
-    .box {
-        width: 250px;
-        margin: 100px auto;
-    }
-    
-    .box li {
-        float: left;
-        width: 24px;
-        height: 24px;
-        background-color: pink;
-        margin: 15px;
-        background: url(../js/img/sprite.png) no-repeat;
-    }
-</style>
-</head>
-
-<body>
-<div class="box">
-    <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-</div>
-<script>
-    // 1. 获取元素 所有的小li 
-    var lis = document.querySelectorAll('li');
-    for (var i = 0; i < lis.length; i++) {
-        // 让索引号 乘以 44 就是每个li 的背景y坐标  index就是我们的y坐标
-        var index = i * 44;
-        lis[i].style.backgroundPosition = '0 -' + index + 'px';
-    }
-</script>
-</body>
-
 </html>
