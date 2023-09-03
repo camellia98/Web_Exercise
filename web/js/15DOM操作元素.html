@@ -124,7 +124,7 @@
     </script>
 </body>
 </html>
-2）使用clasName-->
+2）使用clasName
 <style>
     div{
         width: 200px;
@@ -149,6 +149,30 @@
         // this.className = 'change';
         // 2.如果想要保留原先的类名
         this.className = 'first change';
+    }
+    </script>
+</body>
+</html>
+9.排他思想（先排除其他人，在设置自己的样式）-->
+</head>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+    <script>
+        var btns = document.getElementsByTagName('button');
+        // btns是伪数组 里面的每一个元素是btns[i]
+        for(var i = 0;i < btns.length;i++){
+        btns[i].onclick = function(){
+            // 我们先把所有的按钮背景颜色去掉
+            for(var i = 0;i < btns.length;i++){
+                btns[i].style.backgroundColor = '';
+            }
+            // 然后再让当前的元素背景颜色为pink
+            this.style.backgroundColor = 'pink';
+        }
     }
     </script>
 </body>
