@@ -177,10 +177,10 @@
     </script>
 </body>
 </html>
-10.自定义属性操作-->
-</head>
+10.自定义属性操作（保存并使用数据）（如date-index='1'）
+(1</head>
 <body>
-    <!-- 自定义属性（自己写）index = '1' -->
+    自定义属性（自己写）index = '1'
     <div id="demo" index = '1' class="nav"></div>
     <script>
         var div = document.querySelector('div');
@@ -199,6 +199,24 @@
         // 3.移出属性
         // （1）element.removeAttribute('属性')；
         div.removeAttribute('class');
+    </script>
+</body>
+</html>
+(2)自定义属性date-index='1'-->
+</head>
+<body>
+    <div getTime="20" data-index="1" data-list-name="andy"></div>
+    <script>
+        var div = document.querySelector('div');
+        console.log(div.getAttribute('getTime'));
+//1. 获取自定义属性.dataset.index或.dataset['index']
+        div.setAttribute('data-time', 20);//该自定义属性值
+        console.log(div.getAttribute('data-index'));//1
+        console.log(div.dataset.index);//1
+        console.log(div.dataset['index']);//1
+        console.log(div.dataset);//只能用 data-才可以输出
+        // 如果自定义属性里面有多个-链接的单词，获取的时候需要用驼峰命名法
+        console.log(div.dataset.listName);
     </script>
 </body>
 </html>
