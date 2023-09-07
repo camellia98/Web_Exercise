@@ -95,7 +95,7 @@
 4)创建节点(动态创建节点)（document.createElement('tagName')）
 添加节点（追加元素）（1.node(父级).appendChild(child（子级）)）、
 （2.node.insertBefore(child,指定元素)）
--->
+
 </head>
 <body>
     <ul>
@@ -109,6 +109,48 @@
         ul.appendChild(li);
         var lili = document.createElement('li');
         ul.insertBefore(lili,ul.children[0])
+    </script>
+</body>
+</html>
+5）删除节点
+(node.removeChild(child))从DOM删除一个子节点，返回删除的节点
+</head>
+<body>
+    <button>删除</button>
+    <ul>
+        <li>熊大</li>
+        <li>熊二</li>
+        <li>圣城街道</li>
+    </ul>
+    <script>
+        //1.获取元素
+        var ul = document.querySelector('ul');
+        var btn = document.querySelector('button');
+        btn.onclick = function(){
+            if(ul.children.length == 0){
+                this.disabled = true;//删完了，按钮就变灰色不能再删除
+            }
+            else{
+            ul.removeChild(ul.children[0]);//删除第一个，下一个就变成第一个
+            }
+        }
+        // ul.removeChild(ul.children[0]);//已删除熊大
+    </script>
+</body>
+</html>
+6）复制节点(克隆节点)(注意括号参数为空，只克隆复制节点本身，不克隆里面的子节点)（全拷贝只需括号加true）
+node.cloneNode()-->
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        var ul = document.querySelector('ul');
+        var lili = ul.children[0].cloneNode(true);
+        ul.appendChild(lili);
     </script>
 </body>
 </html>
