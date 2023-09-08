@@ -139,7 +139,7 @@
 </body>
 </html>
 6）复制节点(克隆节点)(注意括号参数为空，只克隆复制节点本身，不克隆里面的子节点)（全拷贝只需括号加true）
-node.cloneNode()-->
+node.cloneNode()
 </head>
 <body>
     <ul>
@@ -151,6 +151,18 @@ node.cloneNode()-->
         var ul = document.querySelector('ul');
         var lili = ul.children[0].cloneNode(true);
         ul.appendChild(lili);
+    </script>
+</body>
+</html>
+2.拓展三种创建元素方式区别-->
+</head>
+<body>
+    <button>点击</button>
+    <p>abc</p>
+    
+    <script>
+        // 1.document.write()(作用：页面重绘，会建立一个新的页面)
+        document.write('<div>123</div>');
     </script>
 </body>
 </html>
