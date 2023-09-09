@@ -159,10 +159,20 @@ node.cloneNode()
 <body>
     <button>点击</button>
     <p>abc</p>
-    
-    <script>
+    <div class="inner"></div>
+    <div class="center"></div>
+    <!-- <script>
         // 1.document.write()(作用：页面重绘，会建立一个新的页面)
         document.write('<div>123</div>');
+    </script> -->
+    <script>
+        // 2.innerHTML 创建元素,不会重绘，效率高，
+        var inner = document.querySelector('.inner');
+        inner.innerHTML = '<a href="#">百度</a>';
+        // 3.document.createElement()创建元素，不能采用字符拼接，需要数组形式拼接
+        var center = document.querySelector('.center');
+        var a = document.createElement('a');
+        center.appendChild(a);
     </script>
 </body>
 </html>
