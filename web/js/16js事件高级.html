@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+1.注册事件(evenTarget.addEventListener(type、listener、[,useCapture])会依次执行。
+接受三个参数（1.type事件类型字符串。不要带on，如click、mouseover）2.listener事件处理函数、3.useCapture可选参数，是布尔值，默认flase）)
+     
+</head>
+<body>
+    <button>传统注册事件</button>
+   
+    <button>方法监听注册事件</button>
+    <script>
+        // 1.传统注册事件
+        var btn = document.querySelectorAll('button');//会覆盖
+        btn[0].onclick = function(){
+            alert('hi');
+        }
+    //2.事件侦听注册事件，addEventListener里面事件类型是字符串，必须加引号，不带on
+    // 同一个元素 同一个事件可以添加多个侦听器
+        btn[1].addEventListener('click',function(){
+            alert(22);
+        })
+        btn[1].addEventListener('click',function(){
+            alert(33);
+        })
+    </script>
+</body>
+</html>
+2.删除事件（evenTarget.addEventListener(type、listener、[,useCapture])）
+<style>
+    div{
+       width: 200px;
+       height: 200px;
+       background-color: aqua;
+    }
+</style>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        var divs = document.querySelectorAll('div');
+        divs[0].onclick = function(){
+            alert(11);
+            // 传统删除事件
+            divs[0].onclick = null;//只能显示一次
+        }
+        divs[1].addEventListener('click',fn);//不需要调用加小括号
+        function fn(){
+            alert(22);
+            divs[1].removeEventListener('click',fn);
+        }
+    </script>
+</body>
+</html>
+3.DOM事件流（1.捕获阶段2.当前目标阶段3.(onclick和attachEvent)冒泡阶段）
+有些事件没有冒泡（onblur、onfocus、onmouseenter、onmouseleave、）-->
+<style>
+   .father {
+            overflow: hidden;
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+            background-color: pink;
+            text-align: center;
+        }
+        
+        .son {
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+            background-color: purple;
+            line-height: 200px;
+            color: #fff;
+        }
+</style>
+</head>
+<body>
+    <div class="father">
+        <div class="son">son盒子</div>
+    </div>
+    <script>
+        // 1.捕获阶段 如果addEventListener第三参数是 ture 呢么则处于捕获阶段 document->html->body->father->son
+        var son = document.querySelector('.son');
+        son.addEventListener('click', function() {
+            alert('son');
+        }, true);
+        var father = document.querySelector('.father');
+        father.addEventListener('click', function() {
+            alert('father');
+        }, true);
+        // 2.冒泡阶段 如果addEventListener第三参数是 false 或省略 呢么则处于冒泡阶段son->father->body->html->document
+        var son = document.querySelector('.son');
+        son.addEventListener('click', function() {
+            alert('son');
+        }, false);
+        var father = document.querySelector('.father');
+        father.addEventListener('click', function() {
+            alert('father');
+        }, false);
+    </script>
+</body>
+</html>
