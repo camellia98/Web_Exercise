@@ -218,8 +218,63 @@
      </script>
      </body>
      </html>
-    5.事件委托-->
+    5.事件委托（不是每个子节点单独设置事件监听器，而是事件监听器设置在其父节点上，然后利用冒泡原理影响设置每个子节点）
     </head>
     <body>
+        <ul>
+            <li>老酒馆</li>
+            <li>老酒馆</li>
+            <li>老酒馆</li>
+            <li>老酒馆</li>
+            <li>老酒馆</li>
+        </ul>
+        <script>
+            // 事件委托的核心原理：给父节点添加监听器，利用事件冒泡影响每一个子节点
+            var ul = document.querySelector('ul');
+            ul.addEventListener('click',function(e){
+                // alert('老酒馆');
+                //  e.target点击那个就显示那个
+                e.target.style.backgroundColor = 'red';
+            })
+        </script>
     </body>
     </html>
+6.常用鼠标事件
+(1)禁止鼠标右键菜单（contexmenu(取消默认上下文菜单)）
+(2)禁止鼠标选用（selectstart 开始选中）
+</head>
+<body>
+    哈哈哈哈
+    <script>
+        // 禁止鼠标右键菜单（contexmenu(取消默认上下文菜单)）
+        document.addEventListener('contextmenu',function(e){
+            e.preventDefault();//阻止
+        })
+        // 禁止鼠标选用（selectstart 开始选中）
+        document.addEventListener('selectstart',function(e){
+            e.preventDefault();
+        })
+    </script>
+</body>
+</html>
+7.鼠标事件对象（MouseEvebt）（e.clientX浏览器窗口可视区X坐标、e.clientY浏览器窗口可视区Y坐标、e.pageX相对于文档页面X坐标、e.pageY相对于文档页面Y坐标、e.screenX电脑屏幕的X坐标、e.screenY电脑屏幕的Y坐标）
+鼠标事件对象（MouseEvebt）键盘事件对象（KeyboardEvent）-->
+<style>
+    body{
+        height: 300px;
+        }
+</style>
+</head>
+<body>
+    <script>
+        document.addEventListener('click',function(e){
+            // 1.e.clientX浏览器窗口可视区X坐标、e.clientY浏览器窗口可视区Y坐标
+            // console.log(e.clientX);
+            // console.log(e.clientY);
+            // 2.e.pageX相对于文档页面X坐标、e.pageY相对于文档页面Y坐标
+            console.log(e.pageX);
+            console.log(e.pageY);
+        })
+    </script>
+</body>
+</html>
