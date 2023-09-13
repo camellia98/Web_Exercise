@@ -7,7 +7,7 @@
     <!-- 
 1.跟随鼠标天使
 （1）鼠标移动事件mousemove
-     -->
+    
      <style>
         img{
             /* 绝对定位 */
@@ -29,6 +29,88 @@
             // 别忘了加单位px
             pts.style.left = X - 50 + 'px';//减数字是为了鼠标居中对齐
             pts.style.top = Y - 40+ 'px';
+        })
+    </script>
+</body>
+</html>
+2.模拟京东按键输入内容
+</head>
+<body> 
+    <input type="text">
+    <script>
+        var search = document.querySelector('input');
+        document.addEventListener('keyup',function(e){
+            if(e.keyCode === 83){
+                search.focus();
+            }
+        })
+    </script>
+</body>
+</html>
+3.模拟京东快递单号查询-->
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .search {
+        position: relative;
+        width: 178px;
+        margin: 100px;
+    }
+    
+    .con {
+        display: none;
+        position: absolute;
+        top: -40px;
+        width: 171px;
+        border: 1px solid rgba(0, 0, 0, .2);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+        padding: 5px 0;
+        font-size: 18px;
+        line-height: 20px;
+        color: #333;
+    }
+    
+    .con::before {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 28px;
+        left: 18px;
+        border: 8px solid #000;
+        border-style: solid dashed dashed;
+        border-color: #fff transparent transparent;
+    }
+</style>
+</head>
+<body> 
+    <div class="search">
+        <div class="con">123</div>
+        <input type="text" placeholder="请输入您的快递单号" class="jd">
+    </div>
+    <script>
+        var con = document.querySelector('.con');
+        var jd_input =document.querySelector('.jd');
+        jd_input.addEventListener('keyup',function(){
+            if(this.value == ''){
+                con.style.display = 'none'
+            }
+            else{
+                con.style.display = 'block';
+                con.innerHTML = this.value;
+            }
+        })
+        // 失去焦点blur，就隐藏con盒子
+        jd_input.addEventListener('blur',function(){
+            con.style.display = 'none';
+        })
+        // 获取焦点focus，就显示con盒子
+        jd_input.addEventListener('focus',function(){
+            if(this.value !== ''){
+                con.style.display = 'block';
+            }
         })
     </script>
 </body>

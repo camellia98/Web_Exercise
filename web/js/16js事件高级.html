@@ -258,7 +258,7 @@
 </body>
 </html>
 7.鼠标事件对象（MouseEvebt）（e.clientX浏览器窗口可视区X坐标、e.clientY浏览器窗口可视区Y坐标、e.pageX相对于文档页面X坐标、e.pageY相对于文档页面Y坐标、e.screenX电脑屏幕的X坐标、e.screenY电脑屏幕的Y坐标）
-鼠标事件对象（MouseEvebt）键盘事件对象（KeyboardEvent）-->
+（1）鼠标事件对象（MouseEvebt）
 <style>
     body{
         height: 300px;
@@ -278,3 +278,45 @@
     </script>
 </body>
 </html>
+（2）键盘事件对象（KeyboardEvent）（onkeyup某个键盘弹起时触发、onkeydown某个键盘被按下时触发、onkeypress某个键盘被按下时触发，但不识别功能键）
+-->
+</head>
+<body>
+    <!-- 顺序keydown -- keypress -- keyup 
+        <script>
+        // 1.onkeyup某个键盘弹起时触发,不区分大小写
+        // document.onkeyup = function(){
+        //     console.log('我是');
+        // }
+        // document.addEventListener('keyup',function(){
+        //     console.log('我是');
+        // })
+        // 2.onkeydown某个键盘被按下时触发,不区分大小写
+        // document.addEventListener('keydown',function(){
+        //     console.log('我是');
+        // })
+        // 3.onkeypress某个键盘被按下时触发，但不识别功能键,如ctrl等，区分大小写,
+        document.addEventListener('keypress',function(){
+            console.log('我是');
+        })
+    </script>
+ （2.1）键盘事件对象中的keyCode属性可以回去相应键的ASCII码值，判断客户按下了什么值-->
+    <script>
+        // 键盘事件对象中的keyCode属性可以回去相应键的ASCII码值
+        // document.addEventListener('keyup',function(e){
+        //     console.log(e.keyCode);
+        // })
+        document.addEventListener('keypress',function(e){
+            console.log(e.keyCode);
+        ;
+        if(e.keyCode === 65){
+            alert('是a');
+        }
+        else{
+            alert('不是');
+        }
+    })
+    </script>
+</body>
+</html>
+    
