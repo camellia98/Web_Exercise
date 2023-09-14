@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- 
+1.BOM(Browser Object Model)即浏览器对象模型，它提供了独立于内容而与浏览器窗口进行交互的对象，其核心对象是window
+(1)window是浏览器顶级对象（是一个接口；是全局对象(函数都会变成属性和方法)），
+</head>
+<body>
+     <script>
+        console.log(window);
+        // window.name特殊属性，输出是个空的
+        console.log(window.name);
+     </script>
+</body>
+</html>
+2.window对象的常见事件 
+（1）window窗口加载事件(文档内容加载完成会触发该事件，就调用处理函数)（window.onload = function(){}）或(windowaddEventListener("load",function(){}))
+
+<script>
+    // // 传统出现重复则以最后一个为准
+    // window.onload = function(){
+    //     var btn = document.querySelector('button');
+    //     btn.addEventListener('click',function(){
+    //         alert('点击我');
+    //     })
+    // } 
+    // addEventListener没有限制，重复也都会显示
+    // load等页面全部加载完毕，包含页面doum元素、图片、css等等
+    // DOMContentLoaded是DOM加载完毕,不包含图片、css等就可以执行
+    window.addEventListener('load',function(){
+        var btn = document.querySelector('button');
+        btn.addEventListener('click',function(){
+            alert('点击我');
+            alert('123');
+        })
+    })
+    window.addEventListener('load',function(){
+       alert(22);
+    })
+    document.addEventListener('DOMContentLoaded',function(){
+        alert(55);
+    })
+</script>
+（2）调整窗口大小（resize）（ window.addEventListener('resize',function()），利用这个可以完成响应式布局
+window.innerWidth当前屏幕的宽度
+-->
+<style>
+    div{
+        width: 200px;
+        height: 200px;
+        background-color: antiquewhite;
+    }
+</style>
+<script>
+    window.addEventListener('load',function(){
+        var div = document.querySelector('div');
+    window.addEventListener('resize',function(){
+        console.log(window.innerWidth);
+        console.log('变化了');
+        if(window.innerWidth <= 800){
+            div.style.display = 'none';
+        }
+        else{
+            div.style.display = 'block';
+        }
+    })
+    })
+    
+    
+</script>
+</head>
+<body>
+    <div></div>
+    <button>点我</button>
+</body>
+</html>
