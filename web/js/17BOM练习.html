@@ -5,10 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- 
-1.调整窗口大小
-     -->
+1.5秒自动关闭广告
+     
 </head>
 <body>
-    
+    <img src="../js/img/ad.jpg" alt="" class="ad">
+    <script>
+        var ad = document.querySelector('.ad');
+        setTimeout(function(){
+            ad.style.display = 'none';
+        },5000)
+    </script>
+</body>
+</html>-->
+</head>
+<body>
+    <div>
+        <span class="hour">1</span>
+    <span class="minute">2</span>
+    <span class="second">3</span>
+    </div>
+    <script>
+        // 1.获取元素
+        var hour = document.querySelector('hour');//小时
+        var minute = document.querySelector('minute');//分钟
+        var second = document.querySelector('second');//秒数
+    </script>
 </body>
 </html>

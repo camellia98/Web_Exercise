@@ -46,7 +46,7 @@
 </script>
 （2）调整窗口大小（resize）（ window.addEventListener('resize',function()），利用这个可以完成响应式布局
 window.innerWidth当前屏幕的宽度
--->
+
 <style>
     div{
         width: 200px;
@@ -75,5 +75,51 @@ window.innerWidth当前屏幕的宽度
 <body>
     <div></div>
     <button>点我</button>
+</body>
+</html>
+3.定时器
+（1）setTimeout(调用函数，[延迟的毫秒数])，执行完定时器在调用函数
+调用函数也叫回调函数（callback）
+只能调用一次，就结束了
+</head>
+<body>
+   <script>
+        // （1）setTimeout(调用函数，[延迟的毫秒数])，执行完定时器在调用函数
+        // 延迟的毫秒数可以省略，但省略默认为0
+        // 这个调用函数可以直接写函数，也可以写函数名
+        // 页面会有很多定时器，所以我们给定时器命名
+        // setTimeout(function(){
+        //     console.log('时机到了');
+        // },2000)//2000毫秒等于2秒
+        // 函数名
+        function calkback(){
+            console.log('爆炸了');
+        }
+        // setTimeout(calkback,3000);
+        // 定时器命名
+        var time =  setTimeout(calkback,3000);
+    </script> 
+    停止setTimeout（）定时器（clearTimeout(timeoutID)）
+    <button>点击停止定时器</button>
+    <script>
+        var btn = document.querySelector('button');
+        var timer = setTimeout(function(){
+            console.log('爆照了');
+        },5000);
+        btn.addEventListener('click',function(){
+            clearTimeout(timer);
+        })
+    </script>
+</body>
+</html>
+(2)setlnterval(调用函数，[间隔的毫秒数])重复调用函数，每隔时间，就去调用一次回调函数
+会调用很多次，重复调用这个函数-->
+</head>
+<body>
+    <script>
+        setInterval(function(){
+            console.log('继续输出');
+        },1000);
+    </script>
 </body>
 </html>
