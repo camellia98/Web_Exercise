@@ -113,7 +113,7 @@ window.innerWidth当前屏幕的宽度
 </body>
 </html>
 (2)setlnterval(调用函数，[间隔的毫秒数])重复调用函数，每隔时间，就去调用一次回调函数
-会调用很多次，重复调用这个函数-->
+会调用很多次，重复调用这个函数
 </head>
 <body>
     <script>
@@ -121,5 +121,76 @@ window.innerWidth当前屏幕的宽度
             console.log('继续输出');
         },1000);
     </script>
+</body>
+</html>
+（3）停止setlnterval（）定时器（clearInterval(intervalID定时标识符)）
+<body>
+    <button class="begin">开启定时器</button>
+    <button class="stop">停止定时器</button>
+    <script>
+        var begin = document.querySelector('.begin');
+        var stop = document.querySelector('.stop');
+        var timer = null; // 全局变量  null是一个空对象
+        begin.addEventListener('click', function() {
+            timer = setInterval(function() {
+                console.log('ni hao ma');
+
+            }, 1000);
+        })
+        stop.addEventListener('click', function() {
+            clearInterval(timer);
+        })
+    </script>
+</body>
+</html>
+（4）this指向问题
+</head>
+<body>
+    <button>点击</button>
+    <script>
+        // this 指向问题 一般情况下this的最终指向的是那个调用它的对象
+
+        // 1. 全局作用域或者普通函数中this指向全局对象window（ 注意定时器里面的this指向window）
+        console.log(this);
+
+        function fn() {
+            console.log(this);
+
+        }
+        window.fn();
+        window.setTimeout(function() {
+            console.log(this);
+
+        }, 1000);
+        // 2. 方法调用中谁调用this指向谁
+        var o = {
+            sayHi: function() {
+                console.log(this); // this指向的是 o 这个对象
+
+            }
+        }
+        o.sayHi();
+        var btn = document.querySelector('button');
+        // btn.onclick = function() {
+        //     console.log(this); // this指向的是btn这个按钮对象
+
+        // }
+        btn.addEventListener('click', function() {
+                console.log(this); // this指向的是btn这个按钮对象
+
+            })
+            // 3. 构造函数中this指向构造函数的实例
+        function Fun() {
+            console.log(this); // this 指向的是fun 实例对象
+
+        }
+        var fun = new Fun();
+    </script>
+</body>
+</html>
+4.JS执行队列
+JS是个单线程，同一时间只能做同一件事-->
+</head>
+<body>
 </body>
 </html>

@@ -17,7 +17,7 @@
         },5000)
     </script>
 </body>
-</html>-->
+</html>
 <style>
     div {
         margin: 200px;
@@ -35,7 +35,6 @@
     }
 </style>
 </head>
-
 <body>
 <div>
     <span class="hour">1</span>
@@ -47,7 +46,7 @@
     var hour = document.querySelector('.hour'); // 小时的黑色盒子
     var minute = document.querySelector('.minute'); // 分钟的黑色盒子
     var second = document.querySelector('.second'); // 秒数的黑色盒子
-    var inputTime = +new Date('2019-5-1 18:00:00'); // 返回的是用户输入时间总的毫秒数
+    var inputTime = +new Date('2023-9-18 18:00:00'); // 返回的是用户输入时间总的毫秒数
     countDown(); // 我们先调用一次这个函数，防止第一次刷新页面有空白 
     // 2. 开启定时器
     setInterval(countDown, 1000);
@@ -67,5 +66,33 @@
     }
 </script>
 </body>
-
-</html
+</html>
+2.发送短信-->
+</head>
+<body>
+        <input type="text" name="" id="">
+        <button>发送</button>
+    </div>
+    <script>
+        //获取元素
+        var btn = document.querySelector('button');
+        var time = 10;//定义剩下的秒数
+        // 注册事件
+        btn.addEventListener('click',function(){
+            btn.disabled = true;//点击一次就被禁用
+            var timer = setInterval(function(){
+                if(time == 0){//等于0就得停止重新开始
+                    clearInterval(timer);
+                    btn.disabled = false;
+                    btn.innerHTML = '发送';
+                    time = 10;//需要重新开始
+                }
+                else{
+                    btn.innerHTML = '还剩下' + time +'秒';
+                    time--;
+                }
+            },1000);
+        })
+    </script>
+</body>
+</html>
