@@ -188,9 +188,26 @@ window.innerWidth当前屏幕的宽度
     </script>
 </body>
 </html>
-4.JS执行队列
-JS是个单线程，同一时间只能做同一件事-->
+4.JS执行队列（先执行同步任务，在执行异步任务）
+JS是个单线程，同一时间只能做同一件事
+同步：就是上一个完成才能执行下一步
+异步通过回调函数实现（常见普通事件click等、资源加载load等、定时器setlnterval等）：可以同时进行
+事件循环event loop
+5.location对象（获取或设置窗体的URL（网址），解析URL，返回的是一个对象）
+（1）location常见属性：location.href(获取或者设置整个URL)、location.host(返回主机名)、location.port(返回端口号，如果未写返回空字符)、location.pathname(返回路径)、location.search(返回参数)、location.hash（返回片段#后面内容 常见于链接 锚点）
+（2）URL（网页地址）统一资源定位符每个文件都有唯一的，
+URL 的一般语法格式为：
+protocol（通讯协议http、ftp等）://host（主机域名）[:port（端口，http默认端口80）]/path（路径）/[?query（参数，用&分隔）]#fragment（片段 #后面内容）
+http://www.itcast.cn/index.html?name=andy&age=18#link-->
 </head>
 <body>
+    <button>点击</button>
+    <script>
+        var btn =document.querySelector('button');
+        btn.addEventListener('click',function(){
+            // console.log(location.href);
+            location.href = 'https://www.baidu.com';//更改
+        })
+    </script>
 </body>
 </html>

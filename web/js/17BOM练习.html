@@ -67,7 +67,7 @@
 </script>
 </body>
 </html>
-2.发送短信-->
+2.发送短信
 </head>
 <body>
         <input type="text" name="" id="">
@@ -93,6 +93,32 @@
                 }
             },1000);
         })
+    </script>
+</body>
+</html>
+3.5秒钟之后自动跳转页面-->
+</head>
+<body>
+    <button>点击</button>
+    <div></div>
+    <script>
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        btn.addEventListener('click',function(){
+            location.href = 'https://www.baidu.com';
+        })
+        var timer = 5;
+        setInterval(function() {
+           
+            if(timer == 0){
+                location.href = 'https://www.baidu.com';
+            }
+            else{
+                div.innerHTML = '您将在'+ timer +'秒钟之后跳转到首页';
+                timer--;
+            }
+        
+        },1000)
     </script>
 </body>
 </html>
