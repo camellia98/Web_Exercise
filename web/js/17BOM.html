@@ -214,7 +214,7 @@ http://www.itcast.cn/index.html?name=andy&age=18#link
 (3)location对象的方法
 location.assign()跟href一样，跳转页面
 location.replace()替换当前页面，但不记录历史不能后退
-location.reload()重新加载页面，相当于刷新-->
+location.reload()重新加载页面，相当于刷新
 </head>
 <body>
     <button>点击</button>
@@ -231,3 +231,21 @@ location.reload()重新加载页面，相当于刷新-->
     </script>
 </body>
 </html>
+6.navigator对象
+</body>
+</html>
+<script>
+    if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|
+    Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS
+    |Symbian|Windows Phone)/i))) {
+    window.location.href = ""; //手机
+    } else {
+    window.location.href = ""; //电脑
+    }
+</script>
+</body>
+</html>
+7.history对象
+back()可以后退功能
+forward()前进功能
+go(参数)前进后退功能 -->
