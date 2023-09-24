@@ -96,7 +96,7 @@
     </script>
 </body>
 </html>
-3.5秒钟之后自动跳转页面-->
+3.5秒钟之后自动跳转页面
 </head>
 <body>
     <button>点击</button>
@@ -119,6 +119,20 @@
             }
         
         },1000)
+    </script>
+</body>
+</html>
+7.history对象-->
+</head>
+<body>
+    <a href="./17BOM.html">点击我去往首页</a>
+    <button>后退</button>
+    <script>
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+            // history.back();
+            history.go(-1);//go-1就是后退一步
+        })
     </script>
 </body>
 </html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- 
+1.元素偏移量offset系列
+ooffset偏移量；获得元素距离带有定位父元素的位置；获取元素自身的大小（宽度高度）；注意返回的值不带单位
+常用属性:element.offsetParent(返回该元素带有定位的父级元素，没有定位则返回body)；element.offsetTop(返回元素相对带有定位父元素上方的偏移);element.offsetLeft(返回元素相对带有定位父元素左边框的偏移);element.offsetWidth(返回自身包括padding、边框、内容区的宽度，返回数值不带单位);element.offsetHeght(返回自身包括padding、边框、内容区的高度，返回数值不带单位)
+     
+     <style>
+        *{
+        margin: 0;
+        padding: 0;
+        }
+        .father{
+            /* 加个定位 */
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: bisque;
+            margin: 100px;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            margin-left: 45px;
+        }
+        .w{
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+            margin: 0 auto 200px;
+            /* 会成大盒子 */
+            padding: 10px;
+        }
+     </style>
+</head>
+<body>
+     <div class="father">
+        <div class="son"></div>
+     </div>
+     <div class="w"></div>
+     <script>
+        // offset
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+        // 可以得到元素的偏移 位置 返回的不带单位的数值,随着设置的值而变化
+        console.log(father.offsetTop);//返回元素相对带有定位父元素上方的偏移
+        console.log(father.offsetLeft);//返回元素相对带有定位父元素左边框的偏移
+        // 1.它以带有定位的父亲为准，没有定位就以body为准
+        console.log(son.offsetLeft);
+        // 2.可以得到元素的大小 宽度和高度 是包含padding + border + width
+        var w = document.querySelector('.w');
+        console.log(w.offsetWidth);
+        console.log(w.offsetHeight);
+        // 3.返回带有定位的父亲 否则返回body
+        console.log(son.offsetParent);//返回的是定位，都找不到就是body
+        console.log(son.parentNode);//返回父亲 是近一级的父亲
+     </script>
+</body>
+</html>
+2.offset和style区别
+style只能得到行内样式表中的样式值；带单位；不包含padding + border + width；改变元素
+offset任何样式的样式值；没有单位；是包含padding + border + width；获取元素-->
+<style>
+    .box{
+        width: 200px;
+        height: 200px;
+        background-color: antiquewhite;
+    }
+</style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        var box =document.querySelector('.box');
+        console.log(box.offsetWidth);
+        box.style.width = '300px';
+    </script>
+</body>
+</html>
