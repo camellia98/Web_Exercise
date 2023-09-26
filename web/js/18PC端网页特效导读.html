@@ -64,7 +64,7 @@ ooffset偏移量；获得元素距离带有定位父元素的位置；获取元�
 </html>
 2.offset和style区别
 style只能得到行内样式表中的样式值；带单位；不包含padding + border + width；改变元素
-offset任何样式的样式值；没有单位；是包含padding + border + width；获取元素-->
+offset任何样式的样式值；没有单位；是包含padding + border + width；获取元素
 <style>
     .box{
         width: 200px;
@@ -79,6 +79,44 @@ offset任何样式的样式值；没有单位；是包含padding + border + widt
         var box =document.querySelector('.box');
         console.log(box.offsetWidth);
         box.style.width = '300px';
+    </script>
+</body>
+</html>
+3.元素可视区client系列（返回元素大小、边框大小）
+element.clientTop(返回元素上边框的大小)；element.clientLeft（返回元素左边框的大小）;element.clientWidth(返回自身包括padding、内容区的宽度，不含边框，返回数值不带单位)；element.clientHeight（返回自身包括padding、内容区的高度，不含边框，返回数值不带单位）
+<style>
+    div{
+        width: 200px;
+        height: 200px;
+        background-color: antiquewhite;
+        border: 10px solid rebeccapurple;
+    }
+</style>
+</head>
+<body>
+    <div></div>
+    <script>
+        var div = document.querySelector('div');
+        // element.clientWidth不带边框
+        console.log(div.clientWidth);
+    </script>
+</body>
+</html>
+4.立即执行函数
+独立创建一个作用域，都是局部变量，不会有命名的冲突-->
+</head>
+<body>
+    <script>
+        // 立即执行函数:不需要调用，立马能够自己执行的函数
+        // 写法
+        // (function(){})(); 或者 (function(){}());
+        (function(a){
+            console.log(a);
+        })(1);//第二个小括号可以看做是调用函数
+        (function(a){
+            console.log(a);
+        }(4));
+       
     </script>
 </body>
 </html>
