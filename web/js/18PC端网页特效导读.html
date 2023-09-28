@@ -103,7 +103,7 @@ element.clientTop(返回元素上边框的大小)；element.clientLeft（返回�
 </body>
 </html>
 4.立即执行函数
-独立创建一个作用域，都是局部变量，不会有命名的冲突-->
+独立创建一个作用域，都是局部变量，不会有命名的冲突
 
 </head>
 <body>
@@ -118,6 +118,37 @@ element.clientTop(返回元素上边框的大小)；element.clientLeft（返回�
             console.log(a);
         }(4));
        
+    </script>
+</body>
+</html>
+5.元素滚动scroll系列（获取元素的大小、滚动距）
+属性element.scrollTop(返回被卷去的上侧距离，返回数值不带单位)；element.scrollLeft(返回被卷去的左侧距离，返回数值不带单位)；element.scrollWidth（返回自身实际的宽度，不含边框，返回数值不带单位）；element.scrollHeight（返回自身实际的高度，不含边框，返回数值不带单位）
+windpw.pageYOffset(页面被卷去的头部部分)-->
+<style>
+    div{
+        width: 100px;
+        height: 30px;
+        background-color: aquamarine;
+        border: 10px solid red;
+        overflow: auto;
+    }
+</style>
+</head>
+<body>
+    <div>
+        我是每日
+        我是每日
+        我是每日
+    </div>
+    <script>
+        // scroll是实际大小
+        var div = document.querySelector('div');
+        // scrollHeight不包含边框，但包含padding
+        console.log(div.scrollHeight);
+        // scroll滚动事件当滚动条发生变化就会触发该事件
+        div.addEventListener('scroll',function(){
+            console.log(div.scrollTop);
+        })
     </script>
 </body>
 </html>

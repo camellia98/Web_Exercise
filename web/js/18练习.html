@@ -210,7 +210,7 @@
 </body>
 
 </html>
-3.（立即执行函数）淘宝flexible.js源码分析-->
+3.（立即执行函数）淘宝flexible.js源码分析
 <script src="./18-flexible分析.js"></script>
 </head>
 <body>
@@ -237,3 +237,51 @@
 </body>
 
 </html>
+4.仿淘宝固定右侧侧边栏-->
+<style>
+    .slider-bar {
+        position: absolute;
+        left: 50%;
+        top: 300px;
+        margin-left: 600px;
+        width: 45px;
+        height: 130px;
+        background-color: pink;
+    }
+    
+    .w {
+        width: 1200px;
+        margin: 10px auto;
+    }
+    
+    .header {
+        height: 150px;
+        background-color: purple;
+    }
+    
+    .banner {
+        height: 250px;
+        background-color: skyblue;
+    }
+    
+    .main {
+        height: 1000px;
+        background-color: yellowgreen;
+    }
+    
+    span {
+        display: none;
+        position: absolute;
+        bottom: 0;
+    }
+</style>
+</head>
+<body>
+    <div class="slider-bar">
+        <span class="goBack">返回顶部</span>
+    </div>
+    <div class="header w">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体部分</div>
+</head>
+<body>
