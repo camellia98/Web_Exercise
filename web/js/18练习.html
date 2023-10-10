@@ -237,7 +237,7 @@
 </body>
 
 </html>
-4.仿淘宝固定右侧侧边栏-->
+4.仿淘宝固定右侧侧边栏
 <style>
     .slider-bar {
         position: absolute;
@@ -354,4 +354,63 @@
 </script>
 </body>
 
+</html>
+5.动画函数的使用
+<style>
+    .sliderbar {
+        position: fixed;
+        right: 0;
+        bottom: 100px;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        cursor: pointer;
+        color: #fff;
+    }
+    
+    .con {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 200px;
+        height: 40px;
+        background-color: purple;
+        z-index: -1;
+    }
+    
+</style>
+<script src="./18动画函数animat.js"></script>
+</head>
+<body>
+    <div class="sliderbar">
+        <span>←</span>
+        <div class="con">问题反馈</div>
+    </div>
+    <script>
+        // 当我们鼠标经过sliderba 就会让con这个盒子滑动到左侧
+        // 当我们鼠标离开sliderba 就会让con这个盒子滑动到右侧
+        var sliderbar = document.querySelector('.sliderbar');
+        var con = document.querySelector('.con');
+        // 点击
+        sliderbar.addEventListener('mouseenter',function(){
+            // animate(obj,target,callback)
+            animate(con,-160,function(){
+                sliderbar.children[0].innerHTML = '→'; 
+            });
+        })
+        // 离开
+        sliderbar.addEventListener('mouseleave',function(){
+            // animate(obj,target,callback)
+            animate(con,0,function(){
+                sliderbar.children[0].innerHTML = '←'; 
+            });
+        })
+    </script>
+</body>
+</html>
+6.网页轮播图-->
+</head>
+<body>
+</body>
 </html>

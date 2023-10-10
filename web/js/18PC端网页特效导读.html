@@ -336,25 +336,6 @@ mouseleave鼠标离开同样不会冒泡
     <div></div>
     <span>123</span>
     <script>
-        
-        function animate(obj,target,callback){
-            //动画函数给不同元素记录不同ing的定时器
-            // 当我们不断地点击按钮，这个元素的速度越来越快，因为我们开启了太多定时器
-            // 解决方案 让我们元素只有一个定时器执行
-            clearInterval(obj.timer);
-            obj.timer = setInterval(function(){
-                // 步长值写到定时器里面
-                // 步长值必须是整数
-                // var step = Math.ceil((target - obj.offsetLeft)/ 10);
-                var step = (target - obj.offsetLeft)/ 10;
-                step = step > 0 ? Math.ceil(step) : Math.floor(step);
-                if(obj.offsetLeft == target){
-           // 停止动画 本质是停止定时器
-                    clearInterval(obj.timer);
-                }
-                obj.style.left = obj.offsetLeft + step + 'px';
-                },30);
-    }
     var div = document.querySelector('div');
     var span = document.querySelector('span');
     var btn500 = document.querySelector('.btn500');
@@ -365,7 +346,9 @@ mouseleave鼠标离开同样不会冒泡
         animate(span,500);
     })
     btn800.addEventListener('click',function(){
-        animate(span,800,function(){});
+        animate(span,800,function(){
+            span.style.backgroundColor = 'red';
+        });
     })
 //    匀速动画就是盒子是当前的位置+ 固定的值10
 // 缓动动画就是盒子当前的位置+变化的值（（目标值-现在的位置）/10 做为每次移动的距离步长）
