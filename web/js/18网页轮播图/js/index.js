@@ -1,4 +1,4 @@
-window.addEventListener('load', function() {//load是因为先执行完html在执行js
+window.addEventListener('load', function() {
     // 1. 获取元素
     var arrow_l = document.querySelector('.arrow-l');
     var arrow_r = document.querySelector('.arrow-r');
