@@ -12,7 +12,7 @@
 
 <script>
     document.getElementById("test").innerHTML= "sdjfhaisudhfau"
-</script> -->
+</script> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,6 +51,25 @@
 
 <body>
 
+</body>
+
+</html>-->
+</head>
+
+<body>
+<form method="post" action="###" name="myform" onsubmit="checkpost()">
+<label for="name">用户名：</label><input type="text" name="name" id="name" /><br />
+<label for="pw">密码：</label><input type="password" name="pw" id="pw" /><br />
+<input type="submit" value="提交" />
+</form>
+<script>
+function checkpost(){
+if(document.forms[0].name.value=="123"&&document.forms[0].pw.value=="1234"){
+window.location="https://zhidao.baidu.com/question/419577890.html";
+}else{
+alert("用户名或密码不正确！")
+return false;
+}}
 </body>
 
 </html>

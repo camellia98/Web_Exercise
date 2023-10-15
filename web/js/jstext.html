@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    div{
+        width: 600px;
+        margin: 100px auto;
+
+    }
+    .message{
+        display: inline-block;
+        font-size: 12px;
+        color: #999;
+        background: url(../js/img/mess.png) no-repeat left center;
+        padding-left: 20px;
+    }
+    .wrong {
+            color: red;
+            background-image: url(../js/img/wrong.png);
+        }
+        
+    .right {
+            color: green;
+            background-image: url(../js/img/right.png);
+        }
+    </style>
+</head>
+<body>
+    <div id="time"></div>
+    <div class="search" onsubmit="return judge()">
+    <form   method="post" action="https://www.baidu.com/" onsubmit="judge()" >
+        用户名：<input type="text" class="user" placeholder="请输入用户名" >
+        <br>
+        <br>
+        密&emsp;码：<input type="password" placeholder="请输入密码" class="ipt">
+        <p class="message">请输入6~16位密码</p>
+        <br>
+        <br>
+        省&emsp;份：<select id="province">
+            <option>省份</option>
+            <option>山东</option>
+            </select>
+        城&emsp;市：<select id="city">
+            <option>城市</option>
+        </select>
+        <br>
+        <br>
+        <input type="submit" value="提交按钮"  >
+    </form>    
+    </div>
+    <script>
+        // 实时显示时间
+        function showTime() {
+            var date = new Date();
+            // 年月日
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var date1 = date.getDate();
+            var arr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];//如果中文格式就写数组
+            var day = date.getDay();
+        
+            // 时分秒
+            var h = date.getHours();//三目运算符原因比10小的数字要加0
+            h = h < 10 ? '0' + h : h;
+            var m = date.getMinutes();
+            m = m < 10 ? '0' + m : m;
+            var s = date.getSeconds();
+            s = s < 10 ? '0' + s : s;
+
+            // 实时显示
+            var element = document.getElementById('time');
+            element.innerHTML = year + '-' + month + '-' + date1  + '-' + arr[day] + h + ':' + m + ':' + s ;
+
+        }
+        setInterval('showTime()', 1000);
+        // 密码
+        var ipt = document.querySelector('.ipt');
+        var message = document.querySelector('.message');
+        ipt.onblur = function() {
+            // 根据表单里面值的长度 ipt.value.length
+            if (this.value.length < 6 || this.value.length > 16) {
+                // console.log('错误');
+                message.className = 'message wrong';
+                message.innerHTML = '您输入的位数不对要求6~16位';
+            } else {
+                message.className = 'message right';
+                message.innerHTML = '您输入的正确';
+            }
+        };
+      
+        // 城市
+        function showCity (){
+        var citys = [[],["济南市","青岛市","淄博市","枣庄市","东营市","烟台市","潍坊市","济宁市","泰安市","威海市","日照市","莱芜市","临沂市","德州市","聊城市","滨州市","菏泽市"]];
+        var provinceNode = document.getElementById("province");
+        var index = provinceNode.selectedIndex;
+        var showCity = citys[index];
+        var cityNode = document.getElementById("city");
+        var cityChildNodes = cityNode.childNodes;
+        for(var i = 0; i < cityChildNodes.length; ){
+            cityNode.removeChild(cityChildNodes[i]);
+        }
+        for(var i = 0; i < showCity.length; i++){
+            var optionCityNode = document.createElement("option");
+            optionCityNode.innerHTML = showCity[i];
+            cityNode.appendChild(optionCityNode);
+        }
+    }
+    // 提交
+    function judge() {
+		var username = document.querySelector(".user").value;
+		var pwd = document.querySelector(".ipt").value;
+		if(username == "")
+		{
+			alert("用户名不能问空！");
+			return false;
+		}
+		else if(pwd == "")
+		{
+			alert("请输入密码");
+			return false;
+		}
+		else{
+            return false;
+        }
+        
+	};
+
+    
+    </script>
+</body>
+</html>
